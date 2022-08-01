@@ -1,0 +1,108 @@
+alias wiki='vim -c "normal 1 wwzO"'
+alias notes='vim -c "normal 1 w wG"'
+
+alias v="nvim"
+alias vim="nvim"
+
+#= Files Structure  ============================
+
+alias ls='lsd'
+alias l='lsd -l'
+alias ll='lsd -lA'
+alias la='lsd -a'
+alias lla='lsd -la'
+alias lt='lsd --tree'
+alias lt1='lsd --tree --depth 1'
+alias lt2='lsd --tree --depth 2'
+alias lss='lsd -lS'
+alias lst='lsd -lt'
+alias ldd='lsd -d */'
+
+function cd_ls() {
+    builtin cd "$@" && lsd
+}
+alias cd='cd_ls'
+
+alias ...="builtin cd ../.."
+alias ....="builtin cd ../../.."
+alias .....="builtin cd ../../../.."
+
+alias c="clear"
+alias q="exit"
+
+function custom_mkdir() {
+    mkdir -p "$@" && builtin cd "$@";
+}
+alias mkd='custom_mkdir'
+
+function custom_touch() {
+    touch $@ && vim $@
+}
+alias tch="custom_touch"
+
+
+#= Taskwarrior ============================
+
+taskProject() {
+    task $1 modify project:$2
+}
+
+taskTagAdd() {
+    task $1 modify +$2
+}
+
+taskTagRemove() {
+    task $1 modify -$2
+}
+
+taskDue() {
+    task $1 modify due:$2
+}
+
+taskDueToday() {
+    task $1 modify due:tomorrow-1h
+}
+
+taskDueTomorrow() {
+    task $1 modify due:tomorrow+23h
+}
+
+taskSchedule() {
+    task $1 modify schedule:$2
+}
+
+taskScheduleTomorrow() {
+    task $1 modify schedule:tomorrow
+}
+
+alias todo="task todo"
+alias tproj=taskProject
+alias tta=taskTagAdd
+alias ttr=taskTagRemove
+alias tdue=taskDue
+alias tduetod=taskDueToday
+alias tduetom=taskDueTomorrow
+alias tsche=taskSchedule
+alias tschetom=taskScheduleTomorrow
+
+#=====================================
+
+alias mux=tmuxinator
+
+#====================================
+
+man() {
+	env \
+		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+		LESS_TERMCAP_md=$(printf "\e[1;36m") \
+		LESS_TERMCAP_me=$(printf "\e[0m") \
+		LESS_TERMCAP_se=$(printf "\e[0m") \
+		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+		LESS_TERMCAP_ue=$(printf "\e[0m") \
+		LESS_TERMCAP_us=$(printf "\e[1;32m") \
+		man "$@"
+}
+
+#====================================
+# QuickLook
+alias ql='qlmanage -p "$@" >& /dev/null'
