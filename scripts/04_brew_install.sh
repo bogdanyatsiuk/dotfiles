@@ -93,6 +93,7 @@ formulaes=(
     "Windows Management" # Windows Management
     "koekeishiya/formulae/yabai:yabai"
     "koekeishiya/formulae/skhd:skhd"
+    "FelixKratz/formulae/sketchybar:SketchyBar"
 #    "Zsh" # Zsh
     "starship:starship"
     "zsh:Zsh"

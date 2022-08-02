@@ -4,6 +4,8 @@ alias notes='vim -c "normal 1 w wG"'
 alias v="nvim"
 alias vim="nvim"
 
+alias rm="trash"
+
 #= Files Structure  ============================
 
 alias ls='lsd'

@@ -47,7 +47,7 @@ yabai -m config window_gap                   06
 
 # status bar
 # yabai -m config external_bar main:20:0
-# yabai -m config external_bar all:20:20
+yabai -m config external_bar all:28:0
 
 # Rules
 yabai -m rule --add app="^System Preferences$" manage=off
