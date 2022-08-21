@@ -97,6 +97,12 @@ sketchybar --add item clock right                        \
                          update_freq=10                  \
            --subscribe battery system_woke
 
+sketchybar --add event input_change 'AppleSelectedInputSourcesChangedNotification' \
+           --add item keyboard right                                               \
+           --set keyboard script="$PLUGIN_DIR/inputsource.sh"                      \
+                 label.padding_right=20                                            \
+           --subscribe keyboard input_change
+
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration and
 # should never be run in an item script.
