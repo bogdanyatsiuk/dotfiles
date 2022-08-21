@@ -6,6 +6,8 @@ alias vim="nvim"
 
 alias rm="trash"
 
+alias brewup="brew update && brew upgrade"
+
 #= Files Structure  ============================
 
 alias ls='lsd'
