@@ -52,7 +52,7 @@ return packer.startup(function(use)
   use {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      require('bg.plugins.indent-blankline')
+      require('user.plugins.indent-blankline')
     end
   }
 
@@ -80,7 +80,7 @@ return packer.startup(function(use)
       -- { 'nvim-telescope/telescope-live-grep-raw.nvim' },
     },
     config = function()
-      require('bg.plugins.telescope')
+      require('user.plugins.telescope')
     end
   }
 
@@ -100,7 +100,7 @@ return packer.startup(function(use)
     use "tamago324/cmp-zsh"
     },
     config = function()
-      require('bg.plugins.cmp')
+      require('user.plugins.cmp')
     end
   }
 
@@ -118,7 +118,7 @@ use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
      'williamboman/nvim-lsp-installer', -- simple to use language server installer
     },
     config = function ()
-      require('bg.plugins.lsp_config')
+      require('user.plugins.lsp_config')
     end
   }
 
@@ -127,7 +127,7 @@ use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
     config = function()
-      require('bg.plugins.treesitter')
+      require('user.plugins.treesitter')
     end
   }
 
