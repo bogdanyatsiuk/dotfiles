@@ -1,17 +1,17 @@
 #!/bin/bash
 
 # nvim
-ln -s ~/.config/nvim/init.lua ~/dotfiles/user/.config/nvim/init.lua
-ln -s ~/.config/nvim/lua/user/ ~/dotfiles/user/.config/nvim/lua/user/
+ln -s ~/dotfiles/user/.config/nvim/init.lua ~/.config/nvim/init.lua
+ln -s ~/dotfiles/user/.config/nvim/lua ~/.config/nvim/lua
 
 # yabai
-ln -s ~/.config/yabai/yabairc ~/dotfiles/user/.config/yabai/yabairc
-ln -s ~/.config/yabai/scripts/ ~/dotfiles/user/.config/yabai/scripts/
+ln -s ~/dotfiles/user/.config/yabai/yabairc ~/.config/yabai/yabairc
+ln -s ~/dotfiles/user/.config/yabai/scripts ~/.config/yabai/scripts
 
 # yabai
-ln -s ~/.config/skhd/skhdrc ~/dotfiles/user/.config/skhd/skhdrc
+ln -s ~/dotfiles/user/.config/skhd/skhdrc ~/.config/skhd/skhdrc
 
 # sketchybar
-ln -s ~/.config/sketchybar/sketchybarrc ~/dotfiles/user/.config/sketchybar/sketchybarrc
-ln -s ~/.config/sketchybar/plugins/ ~/dotfiles/user/.config/sketchybar/plugins/
+ln -s ~/dotfiles/user/.config/sketchybar/sketchybarrc ~/.config/sketchybar/sketchybarrc
+ln -s ~/dotfiles/user/.config/sketchybar/plugins ~/.config/sketchybar/plugins
 
