@@ -205,15 +205,26 @@ shift + alt - b : yabai -m window --toggle border
 # toggle padding and gap
 shift + alt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
 
-# Focus window up/down in stack
-shift + alt - n : yabai -m window --focus stack.next
-shift + alt - p : yabai -m window --focus stack.prev
-
 # stack window
 shift + ctrl - h : yabai -m window --stack west
 shift + ctrl - j : yabai -m window --stack south
 shift + ctrl - k : yabai -m window --stack north
 shift + ctrl - l : yabai -m window --stack east
+
+# Focus window up/down in stack
+shift + alt - n : yabai -m window --focus stack.next
+shift + alt - p : yabai -m window --focus stack.prev
+
+# Focus window with stack index
+shift + ctrl - 1 : ~/.config/yabai/scripts/focus_stack_index.sh 1
+shift + ctrl - 2 : ~/.config/yabai/scripts/focus_stack_index.sh 2
+shift + ctrl - 3 : ~/.config/yabai/scripts/focus_stack_index.sh 3
+shift + ctrl - 4 : ~/.config/yabai/scripts/focus_stack_index.sh 4
+shift + ctrl - 5 : ~/.config/yabai/scripts/focus_stack_index.sh 5
+shift + ctrl - 6 : ~/.config/yabai/scripts/focus_stack_index.sh 6
+shift + ctrl - 7 : ~/.config/yabai/scripts/focus_stack_index.sh 7
+shift + ctrl - 8 : ~/.config/yabai/scripts/focus_stack_index.sh 8
+shift + ctrl - 9 : ~/.config/yabai/scripts/focus_stack_index.sh 9
 
 # float / unfloat window and center on screen
 # alt - t : yabai -m window --toggle float;\
