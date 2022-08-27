@@ -69,4 +69,8 @@ yabai -m rule --add app="^Charles$" title="Settings|Preferences" manage=off
 # yabai -m signal --add event=window_destroyed action="bash /Users/jesseskelton/CustomScripts/SwitchSpaces/window-focus-on-destroy.sh"
 # yabai -m signal --add event=space_changed action="export CUR_ACTIVE_APP=\"iTerm2\""
 
+yabai -m signal --add event=space_changed action="~/.config/sketchybar/plugins/update_spaces_windows_count.sh 5"
+yabai -m signal --add event=window_created action="~/.config/sketchybar/plugins/update_spaces_windows_count.sh 5"
+yabai -m signal --add event=window_destroyed action="~/.config/sketchybar/plugins/update_spaces_windows_count.sh 5"
+
 echo "yabai configuration loaded.."

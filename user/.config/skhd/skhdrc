@@ -99,11 +99,11 @@ shift + alt + ctrl - j : yabai -m window --warp south
 shift + alt + ctrl - k : yabai -m window --warp north
 shift + alt + ctrl - l : yabai -m window --warp east
 
-# move window and focus desktop (sometimes works odd)
-shift + alt - 1 : yabai -m window --space 1; yabai -m window --focus recent
-shift + alt - 2 : yabai -m window --space 2; yabai -m window --focus recent
-shift + alt - 3 : yabai -m window --space 3; yabai -m window --focus recent
-shift + alt - 4 : yabai -m window --space 4; yabai -m window --focus recent
+# move window and focus desktop
+shift + alt - 1 : ~/.config/yabai/scripts/send_window_to_space_and_focus.sh 1
+shift + alt - 2 : ~/.config/yabai/scripts/send_window_to_space_and_focus.sh 2
+shift + alt - 3 : ~/.config/yabai/scripts/send_window_to_space_and_focus.sh 3
+shift + alt - 4 : ~/.config/yabai/scripts/send_window_to_space_and_focus.sh 4
 
 # move window to space without focus
 ctrl + shift + alt - 1 : yabai -m window --space 1

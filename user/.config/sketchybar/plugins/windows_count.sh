@@ -3,6 +3,7 @@
 cnt=$(yabai -m query --windows --space $1 | jq length)
 
 case ${cnt} in
+'1') echo "¹" ;;
 '2') echo "²" ;;
 '3') echo "³" ;;
 '4') echo "⁴" ;;
