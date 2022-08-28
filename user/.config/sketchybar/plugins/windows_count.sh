@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
-cnt=$(yabai -m query --windows --space $1 | jq length)
+cnt=$(yabai -m query --windows --space $1 | jq 'map(select(.subrole!="AXSystemDialog.Hammerspoon")) | length'
+)
 
 case ${cnt} in
 '1') echo "¹" ;;
