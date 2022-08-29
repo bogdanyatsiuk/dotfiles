@@ -64,6 +64,7 @@ yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Spectacle$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Charles$" title="Settings|Preferences" manage=off
+yabai -m rule --add app="^Simulator$" manage=off
 
 ## If I close the active window, focus on any other visible window.
 # yabai -m signal --add event=window_destroyed action="bash /Users/jesseskelton/CustomScripts/SwitchSpaces/window-focus-on-destroy.sh"
