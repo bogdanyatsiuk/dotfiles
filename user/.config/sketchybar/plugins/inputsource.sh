@@ -2,7 +2,8 @@ SOURCE=$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleCurr
 
 case ${SOURCE} in
 'com.apple.keylayout.US') LABEL='❮US❯' ;;
-'com.apple.keylayout.RussianWin') LABEL='❮RU❯' ;;
+'com.apple.keylayout.Ukrainian'*) LABEL='❮UK❯' ;;
+'com.apple.keylayout.Russian'*) LABEL='❮RU❯' ;;
 esac
 
 sketchybar --set $NAME label="$LABEL"
