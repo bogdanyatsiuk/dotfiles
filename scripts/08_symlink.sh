@@ -15,3 +15,5 @@ ln -s ~/dotfiles/user/.config/skhd/skhdrc ~/.config/skhd/skhdrc
 ln -s ~/dotfiles/user/.config/sketchybar/sketchybarrc ~/.config/sketchybar/sketchybarrc
 ln -s ~/dotfiles/user/.config/sketchybar/plugins ~/.config/sketchybar/plugins
 
+# aliases
+ln -s ~/dotfiles/user/aliases ~/aliases

@@ -8,6 +8,12 @@ alias rm="trash"
 
 alias brewup="brew update && brew upgrade"
 
+alias dif='diff_fancy'
+
+function diff_fancy() {
+    diff -u "$@" | diff-so-fancy
+}
+
 #= Files Structure  ============================
 
 alias ls='lsd'
