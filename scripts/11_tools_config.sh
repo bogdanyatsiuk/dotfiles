@@ -3,6 +3,9 @@
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
+# Git
+git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX" && \
+git config --global interactive.diffFilter "diff-so-fancy --patch"
 
 # Alacritty
 # # Clone
