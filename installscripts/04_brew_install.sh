@@ -94,6 +94,7 @@ formulaes=(
     "koekeishiya/formulae/yabai:yabai"
     "koekeishiya/formulae/skhd:skhd"
     "FelixKratz/formulae/sketchybar:SketchyBar"
+    "yqrashawn/goku/goku:Goku"
 #    "Zsh" # Zsh
     "starship:starship"
     "zsh:Zsh"

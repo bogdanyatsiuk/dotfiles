@@ -73,5 +73,6 @@ yabai -m rule --add app="^Simulator$" manage=off
 yabai -m signal --add event=space_changed action="~/.config/sketchybar/plugins/update_spaces_windows_count.sh 5"
 yabai -m signal --add event=window_created action="~/.config/sketchybar/plugins/update_spaces_windows_count.sh 5"
 yabai -m signal --add event=window_destroyed action="~/.config/sketchybar/plugins/update_spaces_windows_count.sh 5"
+yabai -m signal --add event=window_focused action="~/.config/sketchybar/plugins/window_zoom_status.sh"
 
 echo "yabai configuration loaded.."

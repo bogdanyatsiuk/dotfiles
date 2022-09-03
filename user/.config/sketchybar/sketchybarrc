@@ -66,12 +66,23 @@ done
 # only the properties deviating from the current defaults need to be set
 
 # Yabai mode
-sketchybar -m --add item yabai_mode left \
+sketchybar --add item yabai_mode left \
               --set yabai_mode update_freq=15 \
               --set yabai_mode script="$PLUGIN_DIR/yabai_mode.sh" \
               --set yabai_mode click_script="$PLUGIN_DIR/yabai_mode_click.sh" \
               --subscribe yabai_mode space_change
 
+# Window Zoom State
+sketchybar --add item window_zoom left \
+            --set window_zoom background.padding_left=0 \
+                              background.padding_right=0 \
+                              label.padding_left=0 \
+                              label.padding_right=10 \
+                              icon.drawing=off \
+                              script="$PLUGIN_DIR/window_zoom_status.sh" \
+              --subscribe window_zoom space_change
+
+# Separator + WIndow Title
 sketchybar --add item space_separator left                            \
            --set space_separator icon=                               \
                                  background.padding_left=15           \

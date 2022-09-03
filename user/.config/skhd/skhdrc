@@ -192,8 +192,8 @@ ctrl + shift + alt - down : yabai -m window --move rel:0:20; yabai -m window --r
 alt - d : yabai -m window --toggle float
 
 # toggle window zoom
-alt - z : yabai -m window --toggle zoom-parent
-alt - f : yabai -m window --toggle zoom-fullscreen
+alt - z : yabai -m window --toggle zoom-parent; ~/.config/sketchybar/plugins/window_zoom_status.sh
+alt - f : yabai -m window --toggle zoom-fullscreen; ~/.config/sketchybar/plugins/window_zoom_status.sh
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
 # toggle window split type
