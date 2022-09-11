@@ -1,0 +1,103 @@
+;; here's the definition
+
+;; !  | means mandatory
+;; #  | means optional
+;; C  | left_command
+;; T  | left_control
+;; O  | left_option
+;; S  | left_shift
+;; F  | fn
+;; Q  | right_command
+;; W  | right_control
+;; E  | right_option
+;; R  | right_shift
+;; P  | caps_lock
+;; !! | mandatory command + control + optional + shift (hyper)
+;; ## | optional any
+
+{
+ :profiles {:Default {:default true :sim 40 :delay 500 :alone 200 :held 250}}
+
+ ;; define devices
+ :devices {:internalkb [{:vendor_id 1452 :product_id 636}]
+           :magickb [{:vendor_id 76 :product_id 620}]}
+
+ ;; define application identifiers
+ ; :applications {:chrome ["^com\\.google\\.Chrome$"]}
+
+:templates {
+            :launch "open -a '/Applications/%s.app'"
+            :open "open %s"
+            }
+
+  :simlayers {
+    :w-mode {:key :w}
+  }
+
+  :layers {
+           :modes {:key :tab}
+           }
+
+ :main
+ [
+  {:des "Post Esc if Caps is tapped, Control if held." 
+   :rules [[:##caps_lock {:key :left_control :lazy true} nil {:alone :escape}]]}
+
+  {:des "Toggle caps_lock by pressing left_shift + right_shift at the same time"
+   :rules [
+           [:!R#Pleft_shift :caps_lock]
+           [:!S#Pright_shift :caps_lock]
+           ]}
+
+  {:des "External Apple keyboard remaps"
+   :rules [
+           [:condi :magickb]
+           [:##grave_accent_and_tilde :left_shift]
+           [:##non_us_backslash :grave_accent_and_tilde]
+           ]}
+
+  {:des "Launch apps by right command+letters"
+   :rules [
+           [:!Qa [:launch "Alacritty"]]
+           [:!Qb [:launch "Bitwarden"]]
+           [:!Qc [:launch "Google Chrome"]]
+           [:!Qf [:open "~"]]
+           [:!Qi [:launch "iTerm"]]
+           [:!Ql [:launch "Sublime Text"]]
+           [:!Qo [:launch "Obsidian"]]
+           [:!Qs [:launch "Safari"]]
+           [:!Qt [:launch "Sourcetree"]]
+           [:!Qv [:launch "Visual Studio Code"]]
+           [:!Qy "~/dotfiles/user/.config/yabai/scripts/restart.sh"]
+           [:!Qz [:launch "Zotero"]]
+           ]}
+
+  {:des "w-mode"
+      :rules [
+        :w-mode
+        [:u [:launch "Telegram"]]
+        [:i [:launch "Min"]]
+        [:o [:p :r :i :n :t :!S9 :!S0 :left_arrow]]
+    ]}
+
+  {:des "modes switching"
+   :rules [
+           :modes
+           [:n ["vi-norm" 1]]
+           [:i ["vi-ins" 1]]
+           [:n ["vi-vis" 1]]
+           [:q ["vi-norm" 0]["vi-ins" 0]["vi-vis" 0]]
+           ]
+   }
+
+  {:des "Vi Normal mode"
+   :rules [
+           [:condi :vi-norm]
+           [:h :left_arrow]
+           [:j :down_arrow]
+           [:k :up_arrow]
+           [:l :right_arrow]
+           ]
+   }
+ ]
+}

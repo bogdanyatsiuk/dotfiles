@@ -67,6 +67,7 @@ yabai -m rule --add app="^Charles$" title="Settings|Preferences" manage=off
 yabai -m rule --add app="^Simulator$" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Finder$" title="Bin" manage=off
+yabai -m rule --add app="^Finder$" title="Copy" manage=off
 yabai -m rule --add app="^Xcode$" title="Devices" manage=off
 
 ## If I close the active window, focus on any other visible window.
