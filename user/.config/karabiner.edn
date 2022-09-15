@@ -72,6 +72,11 @@
            [:!Qz [:launch "Zotero"]]
            ]}
 
+  {:des "Different"
+   :rules [
+           [:!Sspacebar [:spacebar :equal_sign :spacebar]]
+           ]}
+
   {:des "w-mode"
       :rules [
         :w-mode
@@ -92,11 +97,13 @@
 
   {:des "Vi Normal mode"
    :rules [
-           [:condi :vi-norm]
+           [:condi :vi-norm :!vi-ins]
            [:h :left_arrow]
            [:j :down_arrow]
            [:k :up_arrow]
            [:l :right_arrow]
+           [:0 :!Cleft_arrow]
+           [:!S4 :!Cright_arrow]
            ]
    }
  ]
