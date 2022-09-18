@@ -25,14 +25,14 @@
  ;; define application identifiers
  ; :applications {:chrome ["^com\\.google\\.Chrome$"]}
 
-:templates {
-            :launch "open -a '/Applications/%s.app'"
-            :open "open %s"
-            }
+ :templates {
+             :launch "open -a '/Applications/%s.app'"
+             :open "open %s"
+             }
 
-  :simlayers {
-    :w-mode {:key :w}
-  }
+ :simlayers {
+             :w-mode {:key :w}
+             }
 
   :layers {
            :modes {:key :tab}
@@ -74,7 +74,6 @@
 
   {:des "Different"
    :rules [
-           [:!Sspacebar [:spacebar :equal_sign :spacebar]]
            ]}
 
   {:des "w-mode"
@@ -92,6 +91,8 @@
            [:i ["vi-ins" 1]]
            [:n ["vi-vis" 1]]
            [:q ["vi-norm" 0]["vi-ins" 0]["vi-vis" 0]]
+
+           [:spacebar [:spacebar :equal_sign :spacebar]]
            ]
    }
 
