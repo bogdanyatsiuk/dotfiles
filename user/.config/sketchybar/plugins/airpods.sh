@@ -23,17 +23,9 @@ else
     rlevel=$(echo $device | grep -Eo "batteryLevelRight\":\s\"[0-9]{1,}" | grep -o '\d*')
     clevel=$(echo $device | grep -Eo "batteryLevelCase\":\s\"[0-9]{1,}" | grep -o '\d*')
 
-    echo $llevel
-    echo $rlevel
-    echo $clevel
-
     left=$(get_level $llevel)
     right=$(get_level $rlevel)
     case=$(get_level $clevel)
-
-    echo $left
-    echo $right
-    echo $case
 
     if [[ ! -z "$left" ]]; then
         left="􀲌${left}"
