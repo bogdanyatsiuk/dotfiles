@@ -116,6 +116,7 @@ sketchybar --add event input_change 'AppleSelectedInputSourcesChangedNotificatio
 
 sketchybar --add item AirPods right                                               \
            --set AirPods script="$PLUGIN_DIR/airpods.sh"                          \
+                         label.padding_right=15                                   \
            --set AirPods update_freq=15
 
 ##### Finalizing Setup #####
