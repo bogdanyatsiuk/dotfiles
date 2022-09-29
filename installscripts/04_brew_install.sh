@@ -43,6 +43,7 @@ formulaes=(
     "git-lfs:git-lfs"
     "git-delta:git-delta"
     "git:Git"
+    "jesseduffield/lazygit/lazygit:LazyGit"
     "Editors / Viewers" # Editors / Viewers
     "bat:bat"
     "neovim:NeoVim"

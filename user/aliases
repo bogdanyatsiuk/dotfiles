@@ -6,6 +6,8 @@ alias vim="nvim"
 
 alias rm="trash"
 
+alias g="lazygit"
+
 alias brewup="brew update && brew upgrade"
 
 alias dif='diff_fancy'
