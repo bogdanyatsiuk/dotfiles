@@ -226,6 +226,8 @@ shift + ctrl - 7 : ~/.config/yabai/scripts/focus_stack_index.sh 7
 shift + ctrl - 8 : ~/.config/yabai/scripts/focus_stack_index.sh 8
 shift + ctrl - 9 : ~/.config/yabai/scripts/focus_stack_index.sh 9
 
+shift + alt - 6 : ~/.config/sketchybar/plugins/airpods.sh 1
+
 # float / unfloat window and center on screen
 # alt - t : yabai -m window --toggle float;\
 #           yabai -m window --grid 4:4:1:1:2:2

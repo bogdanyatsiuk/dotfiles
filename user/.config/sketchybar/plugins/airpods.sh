@@ -10,9 +10,18 @@ get_level() {
         echo "❗️${1}%"
     elif [[ "$1" -le 20 ]]; then
         echo "⚠️${1}%"
+    elif [[ ! -z "${2}" ]]; then
+        echo "${1}%"
+    else
+        echo ""
     fi
-    echo ""
 }
+
+ALLWAYS_SHOW=""
+
+if [[ ! -z $1 ]]; then # toggle always show
+    ALLWAYS_SHOW=1
+fi
 
 if [ "$device" = "" ]; then
     sketchybar -m --set $name drawing=off
@@ -23,9 +32,9 @@ else
     rlevel=$(echo $device | grep -Eo "batteryLevelRight\":\s\"[0-9]{1,}" | grep -o '\d*')
     clevel=$(echo $device | grep -Eo "batteryLevelCase\":\s\"[0-9]{1,}" | grep -o '\d*')
 
-    left=$(get_level $llevel)
-    right=$(get_level $rlevel)
-    case=$(get_level $clevel)
+    left=$(get_level $llevel $ALLWAYS_SHOW)
+    right=$(get_level $rlevel $ALLWAYS_SHOW)
+    case=$(get_level $clevel $ALLWAYS_SHOW)
 
     if [[ ! -z "$left" ]]; then
         left="􀲌${left}"
