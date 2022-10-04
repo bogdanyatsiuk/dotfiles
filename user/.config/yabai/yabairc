@@ -70,6 +70,7 @@ yabai -m rule --add app="^Finder$" title="Bin" manage=off
 yabai -m rule --add app="^Finder$" title="Copy" manage=off
 yabai -m rule --add app="^Xcode$" title="^Devices$" manage=off
 yabai -m rule --add app="^Transmission$" manage=off
+yabai -m rule --add app="^DiskImages UI Agent$" manage=off
 
 ## If I close the active window, focus on any other visible window.
 # yabai -m signal --add event=window_destroyed action="bash /Users/jesseskelton/CustomScripts/SwitchSpaces/window-focus-on-destroy.sh"
