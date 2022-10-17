@@ -65,6 +65,7 @@
            [:!Qi [:launch "iTerm"]]
            [:!Ql [:launch "Sublime Text"]]
            [:!Qo [:launch "Obsidian"]]
+           [:!Qr [:launch "Brave Browser"]]
            [:!Qs [:launch "Safari"]]
            [:!Qt [:launch "Sourcetree"]]
            [:!Qv [:launch "Visual Studio Code"]]
