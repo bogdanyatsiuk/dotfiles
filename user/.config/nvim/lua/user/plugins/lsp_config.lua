@@ -41,7 +41,7 @@ lsp_installer.on_server_ready(function(server)
     -- local opts = {}
 	local opts = {
 		on_attach = on_att,
-        capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+        capabilities = cmp_nvim_lsp.default_capabilities()
 		-- on_attach = require("user.lsp.handlers").on_attach,
 		-- capabilities = require("user.lsp.handlers").capabilities,
 	}
