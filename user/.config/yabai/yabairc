@@ -20,11 +20,12 @@ yabai -m config focus_follows_mouse          off
 yabai -m config window_origin_display        default
 yabai -m config window_placement             second_child
 yabai -m config window_topmost               off
-yabai -m config window_shadow                off # on
+yabai -m config window_shadow                off
 yabai -m config window_opacity               off
 yabai -m config window_opacity_duration      0.0
+yabai -m config window_animation_duration    0.0
 yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        0.90
+yabai -m config normal_window_opacity        1.0
 yabai -m config window_border                on
 yabai -m config window_border_width          5
 yabai -m window_border_blur                  off
@@ -74,6 +75,7 @@ yabai -m rule --add app="^Xcode$" title="^Devices$" manage=off
 yabai -m rule --add app="^Transmission$" manage=off
 yabai -m rule --add app="^DiskImages UI Agent$" manage=off
 yabai -m rule --add app="^Installer$" manage=off
+yabai -m rule --add app="^CarPlay Simulator$" manage=off
 
 ## If I close the active window, focus on any other visible window.
 # yabai -m signal --add event=window_destroyed action="bash /Users/jesseskelton/CustomScripts/SwitchSpaces/window-focus-on-destroy.sh"
