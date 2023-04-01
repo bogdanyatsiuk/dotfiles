@@ -123,3 +123,4 @@ alias ql='qlmanage -p "$@" >& /dev/null'
 # Open files in nvim
 alias o="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 alias om="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse -m | xargs nvim"
+alias d="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse -m | xargs nvim -d"

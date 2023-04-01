@@ -104,12 +104,14 @@ shift + alt - 1 : ~/.config/yabai/scripts/send_window_to_space_and_focus.sh 1
 shift + alt - 2 : ~/.config/yabai/scripts/send_window_to_space_and_focus.sh 2
 shift + alt - 3 : ~/.config/yabai/scripts/send_window_to_space_and_focus.sh 3
 shift + alt - 4 : ~/.config/yabai/scripts/send_window_to_space_and_focus.sh 4
+shift + alt - 5 : ~/.config/yabai/scripts/send_window_to_space_and_focus.sh 5
 
 # move window to space without focus
 ctrl + shift + alt - 1 : yabai -m window --space 1
 ctrl + shift + alt - 2 : yabai -m window --space 2
 ctrl + shift + alt - 3 : yabai -m window --space 3
 ctrl + shift + alt - 4 : yabai -m window --space 4
+ctrl + shift + alt - 5 : yabai -m window --space 5
 
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
@@ -210,6 +212,10 @@ shift + ctrl - h : yabai -m window --stack west
 shift + ctrl - j : yabai -m window --stack south
 shift + ctrl - k : yabai -m window --stack north
 shift + ctrl - l : yabai -m window --stack east
+
+# unstack current window
+shift + ctrl - 0 : yabai -m window --warp first
+
 
 # Focus window up/down in stack
 shift + alt - n : yabai -m window --focus stack.next
