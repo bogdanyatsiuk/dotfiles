@@ -5,6 +5,9 @@ if [[ -f "$ZSHRC" ]]; then
 fi
 cp ../user/.zshrc "$ZSHRC" 
 
+# tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+
 
 # Git
 ## Diff so fancy

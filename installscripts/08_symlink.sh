@@ -8,7 +8,8 @@ ln -s ~/dotfiles/user/.config/nvim/init.lua ~/.config/nvim/init.lua
 ln -s ~/dotfiles/user/.config/nvim/lua ~/.config/nvim/lua
 
 # tmux
-ln -s ~/dotfiles/user/.tmux.conf ~/.tmux.conf
+mkdir -p ~/.config/tmux
+ln -s ~/dotfiles/user/.config/tmux/tmux.conf ~/.config/tmux/tmux.conf
 
 # yabai
 ln -s ~/dotfiles/user/.config/yabai/yabairc ~/.config/yabai/yabairc
