@@ -13,7 +13,7 @@ formulaes=(
     "ranger:ranger"
     "tree:tree"
     "vifm:vifm"
-    "z:z" # replace with zoxide
+    "zoxide:zozide"
     "Search tools" # Search tools
     "ack:ack"
     "fd:fd"

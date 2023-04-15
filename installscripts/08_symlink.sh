@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# zsh
+ln -s ~/dotfiles/user/.zshrc_main ~/.zshrc_main
+
 # nvim
 ln -s ~/dotfiles/user/.config/nvim/init.lua ~/.config/nvim/init.lua
 ln -s ~/dotfiles/user/.config/nvim/lua ~/.config/nvim/lua
@@ -26,3 +29,4 @@ ln -s ~/dotfiles/user/.config/karabiner.edn ~/.config/karabiner.edn
 
 # alacritty
 ln -s ~/dotfiles/user/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+

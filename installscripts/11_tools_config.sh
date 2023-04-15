@@ -1,7 +1,10 @@
-# Neovim Plugins
-# Install Packer
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+# Zsh
+ZSHRC=~/.zshrc
+if [[ -f "$ZSHRC" ]]; then
+  mv "$ZSHRC" "${ZSHRC}.bak"
+fi
+cp ../user/.zshrc "$ZSHRC" 
+
 
 # Git
 ## Diff so fancy

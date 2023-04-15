@@ -10,6 +10,7 @@ formulaes=(
     "Terminals" # Terminals
     "alacritty:Alacritty"
     "iterm2:iTerm2"
+    "kitty:Kitty"
     "Browsers" # Browsers
 #    "firefox:Mozilla Firefox"
     "google-chrome:Google Chrome"
