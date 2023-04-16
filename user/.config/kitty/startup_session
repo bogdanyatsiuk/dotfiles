@@ -1,0 +1,1 @@
+launch zsh -c "tmux attach-session || tmux new -s main"

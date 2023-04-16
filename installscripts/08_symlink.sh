@@ -31,3 +31,6 @@ ln -s ~/dotfiles/user/.config/karabiner.edn ~/.config/karabiner.edn
 # alacritty
 ln -s ~/dotfiles/user/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 
+# kitty
+ln -s ~/dotfiles/user/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf
+ln -s ~/dotfiles/user/.config/kitty/startup_session ~/.config/kitty/startup_session
