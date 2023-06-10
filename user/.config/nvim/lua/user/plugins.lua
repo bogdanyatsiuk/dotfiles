@@ -145,6 +145,13 @@ use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
     end
   }
 
+  use {
+    'NvChad/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup()
+    end
+  }
+
 --  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 --
 --  -- Telescope
