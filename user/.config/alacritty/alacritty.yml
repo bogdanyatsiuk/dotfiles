@@ -170,7 +170,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 14.0
+  size: 16.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -454,6 +454,12 @@ live_config_reload: true
 #  program: /bin/bash
 #  args:
 #    - --login
+shell:
+  program: /bin/zsh
+  args:
+    - --login
+    - -c
+    - "tmux attach-session || tmux new -s main"
 
 # Startup directory
 #
@@ -768,7 +774,7 @@ live_config_reload: true
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
+key_bindings:
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
@@ -879,6 +885,62 @@ live_config_reload: true
   #- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
+
+  # tmux keys with Cmd
+  # select window 1-9
+  - { key: Key1,  mods: Command,  chars: "\x01\x40" }
+  - { key: Key2,  mods: Command,  chars: "\x01\x32" }
+  - { key: Key3,  mods: Command,  chars: "\x01\x34" }
+  - { key: Key4,  mods: Command,  chars: "\x01\x34" }
+  - { key: Key5,  mods: Command,  chars: "\x01\x44" }
+  - { key: Key6,  mods: Command,  chars: "\x01\x36" }
+  - { key: Key7,  mods: Command,  chars: "\x01\x37" }
+  - { key: Key8,  mods: Command,  chars: "\x01\x38" }
+  - { key: Key9,  mods: Command,  chars: "\x01\x39" }
+
+  # tmux open session switcher
+  - { key: T,  mods: Command,  chars: "\x01\x54" }
+  # tmux show sessions
+  - { key: J,  mods: Command,  chars: "\x01\x73" }
+  # tmux new window
+  - { key: N,  mods: Command,  chars: "\x01\x6e" }
+  # tmux split horizontally
+  - { key: H,  mods: Command,  chars: "\x01\x7c" }
+  # tmux split vertically
+  - { key: Y,  mods: Command,  chars: "\x01\x5f" }
+
+  # tmux prev window
+  - { key: Comma,  mods: Command,  chars: "\x01\x2c" }
+  # # tmux next window
+  - { key: Period,  mods: Command,  chars: "\x01\x2e" }
+
+  # tmux enter command prompt
+  - { key: Semicolon,  mods: Command|Shift,  chars: "\x01\x3a" }
+
+  # tmux break pane
+  - { key: Key1,  mods: Command|Shift,  chars: "\x01\x21" }
+  # tmux join pane
+  - { key: J,  mods: Command|Shift,  chars: "\x01\x42" }
+  # tmux link window
+  - { key: L,  mods: Command|Shift,  chars: "\x01\x4c" }
+
+  # tmux close window
+  - { key: X,  mods: Command|Shift,  chars: "\x01\x58" }
+  # tmux close pane
+  - { key: X,  mods: Command,  chars: "\x01\x78" }
+
+  # tmux detach from session
+  - { key: D,  mods: Command,  chars: "\x01\x64" }
+  # tmux copy mode
+  - { key: LBracket,  mods: Command,  chars: "\x01\x5b" }
+  # tmux equally resize panes
+  - { key: E,  mods: Command,  chars: "\x01\x45" }
+  # tmux zoom pane
+  - { key: Z,  mods: Command,  chars: "\x01\x7a" }
+  # tmux swap with next pane
+  - { key: RBracket,  mods: Command|Shift,  chars: "\x01\x7d" }
+  # tmux swap with prev pane
+  - { key: LBracket,  mods: Command|Shift,  chars: "\x01\x7b" }
 
 #debug:
   # Display the time it takes to redraw each frame.
