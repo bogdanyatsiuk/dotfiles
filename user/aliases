@@ -130,6 +130,7 @@ alias d="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse -m | xargs 
 alias nvim-lazy="NVIM_APPNAME=lazyvim nvim"
 alias nvim-chad="NVIM_APPNAME=nvchad nvim"
 alias nvim-astro="NVIM_APPNAME=astronvim nvim"
+alias vv="NVIM_APPNAME=nvim2 nvim"
 
 function nvims() {
   items=("default" "LazyVim" "NvChad" "AstroNvim")

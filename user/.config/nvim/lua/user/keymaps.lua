@@ -28,8 +28,8 @@ nmap("<Leader>h", ":noh<CR>") -- C-l in nvim 0.7+
 nmap("gf", ":edit <cfile><CR>")
 
 -- Reselect visual selection after indenting
-vmap("v", "<", "<gv")
-vmap("v", ">", ">gv")
+vmap("<", "<gv")
+vmap(">", ">gv")
 
 -- Maintain the cursor position when yanking a visual selection
 -- http://ddrscott.github.io/blog/2016/yank-without-jank/

@@ -54,6 +54,7 @@ formulaes=(
     "Python" # Python
     "pipenv:pipenv"
     "Tasks" # Tasks
+    "dooit:dooit"
     "task:Taskwarrior"
     "tasksh:Tasksh"
     "timewarrior:Timewarrior"
@@ -76,6 +77,7 @@ formulaes=(
     "cloc:cloc"
     "gcal:gCal"
     "gotop:gotop"
+    "glow:Glow"
     "hr:hr"
     "htop:htop"
     "insect:insect"
