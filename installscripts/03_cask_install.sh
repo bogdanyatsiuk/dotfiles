@@ -8,9 +8,10 @@ formulaes=(
     "spectacle:Spectacle"
 #    "xquartz:XQuartz"
     "Terminals" # Terminals
-    "alacritty:Alacritty"
-    "iterm2:iTerm2"
-    "kitty:Kitty"
+    #"alacritty:Alacritty"
+    #"iterm2:iTerm2"
+    #"kitty:Kitty"
+    "wezterm:wezterm"
     "Browsers" # Browsers
 #    "firefox:Mozilla Firefox"
     "google-chrome:Google Chrome"

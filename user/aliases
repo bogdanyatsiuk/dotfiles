@@ -144,3 +144,5 @@ function nvims() {
   cfg=$(echo "$config" | tr '[:upper:]' '[:lower:]')
   NVIM_APPNAME=$cfg nvim $@
 }
+
+source ~/local_aliases

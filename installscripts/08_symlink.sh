@@ -34,3 +34,7 @@ ln -s ~/dotfiles/user/.config/alacritty/alacritty.yml ~/.config/alacritty/alacri
 # kitty
 ln -s ~/dotfiles/user/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf
 ln -s ~/dotfiles/user/.config/kitty/startup_session ~/.config/kitty/startup_session
+
+# WezTerm
+mkdir -p ~/.config/wezterm
+ln -s ~/dotfiles/user/.config/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
