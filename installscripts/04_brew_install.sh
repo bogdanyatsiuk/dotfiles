@@ -10,9 +10,10 @@ formulaes=(
     "broot:broot"
     "lsd:lsd"
     "exa:exa"
-    "ranger:ranger"
+    #"ranger:ranger"
     "tree:tree"
     "vifm:vifm"
+    "yazi:yazi"
     "zoxide:zozide"
     "Search tools" # Search tools
     "ack:ack"

@@ -1,4 +1,4 @@
-#!/bin/bash
+a_!/bin/bash
 
 # zsh
 ln -s ~/dotfiles/user/.zshrc_main ~/.zshrc_main
@@ -38,3 +38,8 @@ ln -s ~/dotfiles/user/.config/kitty/startup_session ~/.config/kitty/startup_sess
 # WezTerm
 mkdir -p ~/.config/wezterm
 ln -s ~/dotfiles/user/.config/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
+
+# Yazi
+mkdir -p ~/.config/yazi
+ln -s ~/dotfiles/user/.config/yazi/yazi.toml ~/.config/yazi/yazi.toml
+ln -s ~/dotfiles/user/.config/yazi/theme.toml ~/.config/yazi/theme.toml
