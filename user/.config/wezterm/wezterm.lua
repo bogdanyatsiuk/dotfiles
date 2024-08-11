@@ -7,6 +7,9 @@ local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
 
+-- Spawn a zsh shell in login mode and launch tmux
+config.default_prog = { 'zsh', '-l', '-c', 'tmux attach-session || tmux new -s main' }
+
 -- Changing the color scheme:
 config.color_scheme = 'Catppuccin Mocha'
 -- config.color_scheme = 'Ayu Mirage (Gogh)'
@@ -57,6 +60,11 @@ config.keys = {
     k.cmd_to_tmux_key("x", "x"), -- close pane
     k.cmd_shift_to_tmux_key("x", "X"), -- close window
     k.cmd_to_tmux_key("d", "d"), -- detach from session
+    k.cmd_to_tmux_key("s", "s"), -- switch session
+    k.cmd_shift_to_tmux_key("n", "N"), -- New session
+
+    -- New wezterm window without attached tmux session
+    k.ctrl_shift_key_action("n", wezterm.action.SpawnCommandInNewWindow { args = { 'zsh', '-l' } }),
 }
 
 -- config.debug_key_events = true

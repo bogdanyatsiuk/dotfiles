@@ -89,6 +89,7 @@ formulaes=(
     "radare2:Reverse engineering framework"
     "screenfetch:screenfetch"
     "shellcheck:shellcheck"
+    "tokei:tokei"
     "trash:trash"
     "Video" # Video
     "ffmpeg:FFmpeg"

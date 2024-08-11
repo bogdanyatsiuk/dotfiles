@@ -19,6 +19,10 @@ local function cmd_shift_key(key, action)
 	return M.key_table("CMD|SHIFT", key, action)
 end
 
+local function ctrl_shift_key(key, action)
+	return M.key_table("CTRL|SHIFT", key, action)
+end
+
 local function tmux_pref_key(key, mods)
     return act.Multiple({
         act.SendKey({ mods = "CTRL", key = "b" }),
@@ -40,5 +44,7 @@ M.cmd_shift_to_tmux_key = function(key, tmux_key, mods)
         tmux_pref_key(tmux_key, mods)
 	)
 end
+
+M.ctrl_shift_key_action = ctrl_shift_key
 
 return M
