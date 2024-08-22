@@ -1,26 +1,49 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-  return
-end
+return {
+    {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.5',
+        dependencies = {
+            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+        },
+        lazy = true,
+        config = function()
+            local actions = require("telescope.actions")
+            require('telescope').setup({
+                defaults = {
+                    prompt_prefix = "❯ ",
+                    selection_caret = "▶︎ ",
+                },
+                extensions = {
+                    repo = {
+                        list = {
+                            fd_opts = {
+                                "--no-ignore-vcs",
+                            },
+                            search_dirs = {
+                                "~/Developer",
+                            },
+                        },
+                    },
+                }
+            })
+            require('telescope').load_extension("fzf")
+            require('telescope').load_extension("repo")
+        end,
+    },
 
-telescope.setup {
-  defaults = {
+    {
+        'cljoly/telescope-repo.nvim',
+        lazy = true,
+    },
 
-    prompt_prefix = "❯ ",
-    selection_caret = "▶︎ ",
-
-  },
-  extensions = {
-    fzf = {
-      fuzzy = true,                    -- false will only do exact matching
-      override_generic_sorter = true,  -- override the generic sorter
-      override_file_sorter = true,     -- override the file sorter
-      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                                       -- the default case_mode is "smart_case"
-    }
-  }
+    {
+        "AckslD/nvim-neoclip.lua",
+        event = "VeryLazy",
+        config = function()
+            require('neoclip').setup({
+                preview = false
+            })
+        end,
+    },
+    -- "benfowler/telescope-luasnip.nvim"
 }
-
-telescope.load_extension('fzf')
---require('telescope').load_extension('fzf')
-

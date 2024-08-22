@@ -43,3 +43,4 @@ ln -s ~/dotfiles/user/.config/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
 mkdir -p ~/.config/yazi
 ln -s ~/dotfiles/user/.config/yazi/yazi.toml ~/.config/yazi/yazi.toml
 ln -s ~/dotfiles/user/.config/yazi/theme.toml ~/.config/yazi/theme.toml
+ln -s ~/dotfiles/user/.config/yazi/keymap.toml ~/.config/yazi/keymap.toml
