@@ -12,7 +12,6 @@ formulaes=(
     "exa:exa"
     #"ranger:ranger"
     "tree:tree"
-    "vifm:vifm"
     "yazi:yazi"
     "zoxide:zozide"
     "Search tools" # Search tools
@@ -24,7 +23,6 @@ formulaes=(
     "jdupes:jdupes"
     "pdfgrep:pdfgrep"
     "ripgrep:ripgrep"
-    "the_silver_searcher:The Silver Searcher"
     "Compression" # Compression
     "brotli:brotli"
     "p7zip:7-Zip"
@@ -51,7 +49,6 @@ formulaes=(
     "Docs & Help" # Docs & Help
     "tldr:tldr"
     "howdoi:howdoi"
-    "vim:Vim"
     "Python" # Python
     "pipenv:pipenv"
     "Tasks" # Tasks
@@ -79,6 +76,7 @@ formulaes=(
     "gcal:gCal"
     "gotop:gotop"
     "glow:Glow"
+    "hexyl:hexyl"
     "hr:hr"
     "htop:htop"
     "insect:insect"
@@ -93,6 +91,7 @@ formulaes=(
     "trash:trash"
     "Video" # Video
     "ffmpeg:FFmpeg"
+    "ffmpegthumbnailer:ffmpegthumbnailer"
     "mps-youtube:mps-youtube"
     "youtube-dl:youtube-dl"
     "Windows Management" # Windows Management
