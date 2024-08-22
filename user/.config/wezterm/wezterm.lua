@@ -30,6 +30,9 @@ config.window_padding = {
 config.font = wezterm.font 'MesloLGM Nerd Font'
 config.font_size = 14.5
 
+config.default_cursor_style = 'SteadyBar'
+config.cursor_thickness = '200%'
+
 config.keys = {
     k.cmd_to_tmux_key("1", "1"), -- navigate to window (1-9)
     k.cmd_to_tmux_key("2", "2"),
@@ -65,6 +68,11 @@ config.keys = {
 
     -- New wezterm window without attached tmux session
     k.ctrl_shift_key_action("n", wezterm.action.SpawnCommandInNewWindow { args = { 'zsh', '-l' } }),
+
+    k.ctrl_to_send_string(",",  "\x1b\x2c"), -- Ctrl+, will send Opt+, to use in nvim
+    k.ctrl_to_send_string(";",  "\x1b\x3b"), -- Ctrl+; will send Opt+; to use in nvim
+
+    k.cmd_to_send_string("/", "gcc"),
 }
 
 -- config.debug_key_events = true
