@@ -1,47 +1,37 @@
--- 404452
-vim.cmd [[highlight BgIndentBlanklineIndent guifg=#404452 gui=nocombine]]
-
-require("indent_blankline").setup {
-    -- char = '|'
-    -- char = '▏',
-    -- char = ' ',
-    -- char_list = {'|', '¦', '┆', '┊'},
-    -- context_char = '┃',
-    -- char = '▏',
-    -- context_char = '▎',
-    show_current_context = true,
-    -- show_current_context_start = true,
-    show_first_indent_level = true,
-    -- context_patterns = {
-    --     "class",
-    --     "return",
-    --     "function",
-    --     "method",
-    --     "^if",
-    --     "^while",
-    --     "^for",
-    --     "^object",
-    --     "^table",
-    --     "block",
-    --     "arguments",
-    --     "if_statement",
-    --     "else_clause",
-    --     "try_statement",
-    --     "catch_clause",
-    --     "import_statement",
-    --     "operation_type",
-    -- },
-    filetype_exclude = {
-      'help',
-      'terminal',
-      'dashboard',
-      'packer',
-      'lspinfo',
-      'TelescopePrompt',
-      'TelescopeResults',
+return {
+    "lukas-reineke/indent-blankline.nvim",
+    event = "VeryLazy",
+    opts = {
+        debounce = 100,
+        indent = {
+            char = "│",
+            tab_char = "│",
+        },
+        scope = { enabled = false },
+        -- scope = {
+        --             show_start = false,
+        --             show_end = false,
+        --             show_exact_scope = true,
+        --         },
+        exclude = {
+            filetypes = {
+                "Trouble",
+                "alpha",
+                "dashboard",
+                "help",
+                "lazy",
+                "lazyterm",
+                "lspinfo",
+                "mason",
+                "neo-tree",
+                "noice",
+                "notify",
+                "nvimtree",
+                "oil",
+                "toggleterm",
+                "trouble",
+            },
+        },
     },
-    buftype_exclude = { 'terminal', 'NvimTree' },
-    char_highlight_list = {
-        "BgIndentBlanklineIndent",
-    }
+    main = "ibl",
 }

@@ -1,103 +1,91 @@
-require "user.keymap_func"
+local key = require("user.helpers.keymap_funcs")
 
-
---Remap space as leader key
-amap("<Space>", "<Nop>")
+-- Remap space as leader key
+key.amap("<Space>", "<Nop>")
 vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+vim.g.maplocalleader = " "
 
--- Better window navigation
--- nmap("<C-h>", "<C-w>h")
--- nmap("<C-j>", "<C-w>j")
--- nmap("<C-k>", "<C-w>k")
--- nmap("<C-l>", "<C-w>l")
+-- Scroll instead of moving cursor with arrows
+-- key.nmap("<Up>", "<C-y>")
+-- key.nmap("<Down>", "<C-e>")
 
-nmap("<Up>", "<C-y>")
-nmap("<Down>", "<C-e>")
+key.imap("<M-,>", "<Esc><S-a>,<Esc>")
+key.imap("<M-;>", "<Esc><S-a>;<Esc>")
 
-nmap("<Leader>w", ":w<CR>")
-nmap("<Leader>h", ":noh<CR>") -- C-l in nvim 0.7+
-
--- nmap("Y", "y$") -- default behaviour in nvim 0.7+
-
--- Opens line below or above the current line
--- imap("<S-CR>", "<C-O>O")
--- imap("<C-CR>", "<C-O>o")
-
--- Allow gf to open non-existent files
-nmap("gf", ":edit <cfile><CR>")
+key.nmap("<Leader>w", ":w<CR>")
+-- key.nmap("<Leader>c", ":", { silent=false })
+key.nmap("<Leader>l", ":noh<CR>")
+key.nmap("<Leader>q", ":q<CR>")
 
 -- Reselect visual selection after indenting
-vmap("<", "<gv")
-vmap(">", ">gv")
+key.vmap("<", "<gv")
+key.vmap(">", ">gv")
+key.vmap("J", ":m '>+1<CR>gv=gv")
+key.vmap("K", ":m '<-2<CR>gv=gv")
 
 -- Maintain the cursor position when yanking a visual selection
 -- http://ddrscott.github.io/blog/2016/yank-without-jank/
-vmap("y", "myy`hay")
-vmap("Y", "myY`y")
+key.vmap("y", "myy`y")
+key.vmap("Y", "myY`y")
 
 -- When text is wrapped, move by terminal rows
-nmap("k", "gk")
-nmap("j", "gj")
+key.nmap('k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+key.nmap('j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- Paste replace visual selection without copying it
-vmap("p", '"_dP')
+-- Replay macro
+key.nmap("<C-q>", "@@")
 
--- Easy insertion of a trailing ; or , from insert mode
-imap(";;", "<Esc>A;<Esc>")
-imap(",,", "<Esc>A,<Esc>")
+-- Scroll to center on search and scroll
+key.nmap("<C-d>", "<C-d>zz")
+key.nmap("<C-u>", "<C-u>zz")
+key.nmap("n", "nzzzv")
+key.nmap("N", "Nzzzv")
+key.nmap("J", "mzJ`z")
 
-nmap("n", "nzzzv")
-nmap("N", "Nzzzv")
-nmap("J", "mzJ`z")
+key.nmap("<leader>d", '"_d')
+key.vmap("<leader>d", '"_d')
 
-nmap("<leader>d", '"_d')
-vmap("<leader>d", '"_d')
+-- Toggle listchars
+key.nmap("<leader>tc1", '<cmd>set listchars=tab:▸\\ ,trail:·<cr>')
+key.nmap("<leader>tc2", '<cmd>set listchars=tab:▸\\ ,trail:·,eol:↲<cr>')
+key.nmap("<leader>tc3", '<cmd>set listchars=tab:▸\\ ,trail:·,eol:↲,nbsp:𛲖<cr>')
+key.nmap("<leader>tc4", '<cmd>set listchars=tab:▸\\ ,trail:\\ ,eol:\\ ,nbsp:\\ <cr>')
 
--- Resize window
-nmap("<leader><C-j>", ":resize +2<CR>")
-nmap("<leader><C-k>", ":resize -2<CR>")
-nmap("<leader><C-l>", ":vertical resize -2<CR>")
-nmap("<leader><C-h>", ":vertical resize +2<CR>")
+key.nmap("<Esc>", '<cmd>lua require("user.helpers.utils").dismiss_notice_and_higlights()<cr>', { desc = "Dismiss Notice notifications and highlights" })
+key.nmap("g<Right>", '<cmd>lua require("user.helpers.utils").open_github_url()<cr>', { desc = "Open github url under the cursor" })
 
+----------------------------
+-- -- Nvim-Tree
+-- key.nmap("<Leader>e", ":NvimTreeToggle<CR>")
+-- -- nmap("<Leader>R", ":NvimTreeRefresh<CR>")
+-- key.nmap("<Leader>i", ":NvimTreeFindFile<CR>")
 
--- NvimTree
-nmap("<Leader>e", ":NvimTreeToggle<CR>")
-nmap("<Leader>R", ":NvimTreeRefresh<CR>")
-nmap("<Leader>i", ":NvimTreeFindFile<CR>")
-
---- Telescope
-nmap("<Leader>j", "<cmd>lua require('telescope.builtin').find_files()<cr>")
-nmap("<Leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>")
-nmap("<Leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
-nmap("<Leader>fs", "<cmd>lua require('telescope.builtin').grep_string()<cr>")
-
-nmap("<Leader>fB", "<cmd>lua require('telescope.builtin').builtin()<cr>")
-
-function search_current_buffer()
-    require('telescope.builtin').current_buffer_fuzzy_find(
-        {
-            sorting_strategy = "ascending",
-            layout_config = {
-                prompt_position = "top",
-            }
-        }
-    )
-end
-
-function project_search()
-  require("telescope.builtin").find_files {
-    previewer = false,
-    layout_strategy = "vertical",
-    cwd = require("nvim_lsp.util").root_pattern ".git"(vim.fn.expand "%:p"),
-  }
-end
-
-nmap("<leader>fc", "<cmd>lua search_current_buffer()<cr>")
--- nmap("<leader>fp", "<cmd>lua project_search()<cr>")
-
-
--- Temporary mapping
--- vmap("<leader>r", ":'<,'>w !lua<cr>")
-xmap("<leader>r", ":w !lua<cr>")
-nmap("<leader>r", ":w | !lua %<cr>")
+------------------------------
+---- Oilopen_float
+--key.nmap("-", "<cmd>lua require('oil').open_float()<CR>", { desc = "Oil: Open parent directory" })
+--
+------------------------------
+---- Harpoon
+--key.nmap("<Leader>ma", "<cmd>lua require('harpoon.mark').add_file()<CR>", { desc = "Harpoon: add file" })
+--key.nmap("<Leader>md", "<cmd>lua require('harpoon.mark').rm_file()<CR>", { desc = "Harpoon: remove file" })
+--key.nmap("<Leader>0", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = "Harpoon: toggle quick menu" })
+--key.nmap("<Leader>1", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", { desc = "Harpoon: navigate to file 1" })
+--key.nmap("<Leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", { desc = "Harpoon: navigate to file 2" })
+--key.nmap("<Leader>3", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", { desc = "Harpoon: navigate to file 3" })
+--key.nmap("<Leader>4", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", { desc = "Harpoon: navigate to file 4" })
+--
+------------------------------
+---- Telescope
+--key.nmap("<Leader>j", "<cmd>lua require('user.helpers.telescope').search_files()<cr>")
+--key.nmap("<Leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>")
+--key.nmap("<Leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>")
+--key.nmap("<Leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
+--key.nmap("<Leader>fs", "<cmd>lua require('telescope.builtin').grep_string()<cr>")
+--key.nmap("<Leader>fB", "<cmd>lua require('telescope.builtin').builtin()<cr>")
+--key.nmap("<leader>fc", "<cmd>lua require('user.helpers.telescope').search_current_buffer()<cr>")
+--key.nmap("<leader>fr", "<cmd>Telescope repo list<cr>")
+----key.nmap("<leader>fM", "<cmd>Telescope bookmarks<cr>")
+--key.nmap("<leader>fM", "<cmd>lua require('user.helpers.telescope').open_bookmarks()<cr>", { desc = 'Fuzzy search browser bookmarks', })
+--key.nmap("<leader>fy", "<cmd>lua require('user.helpers.telescope').neoclip()<cr>")
+--key.nmap("<leader>fm", "<cmd>lua require('user.helpers.telescope').macros()<cr>")
+--

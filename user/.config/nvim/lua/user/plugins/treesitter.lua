@@ -1,72 +1,70 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-if not status_ok then
-  return
-end
+return {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    event = { "VeryLazy" },
+    opts = {
+        ensure_installed = {
+            'bash',
+            'c',
+            'clojure',
+            'cmake',
+            'cpp',
+            'css',
+            'csv',
+            'diff',
+            'dockerfile',
+            'elixir',
+            'go',
+            'haskell',
+            'html',
+            'javascript',
+            'jq',
+            'jsdoc',
+            'json',
+            'lua',
+            'luadoc',
+            'make',
+            'markdown',
+            'markdown_inline',
+            'nasm',
+            'ocaml',
+            'python',
+            'query',
+            'rust',
+            'solidity',
+            'sql',
+            'swift',
+            'tmux',
+            'toml',
+            'typescript',
+            'vim',
+            'vimdoc',
+            'xml',
+            'yaml',
+        },
+        sync_install = false,
+        auto_install = false,
+        highlight = {
+            enable = true,
+            -- disable = { "c", "rust" },
+            -- additional_vim_regex_highlighting = { 'ruby' },
+        },
+        indent = {
+            enable = true,
+            -- disable = { 'ruby' }
+        },
 
-configs.setup {
-  -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = {
-      "bash",
-      "c",
-      "c_sharp",
-      "clojure",
-      "cmake",
-      "comment",
-      "cpp",
-      "css",
-      "cuda",
-      "dart",
-      "dockerfile",
-      "dot",
-      "elixir",
-      "erlang",
-      "fish",
-      "go",
-      "graphql",
-      "haskell",
-      "html",
-      "http",
-      "javascript",
-      "jsdoc",
-      "json",
-      "json5",
-      "jsonc",
-      "julia",
-      "kotlin",
-      "latex",
-      "llvm",
-      "lua",
-      "make",
-      "markdown",
-      "python",
-      -- "tree-sitter-query",
-      "r",
-      "regex",
-      "rust",
-      "scss",
-      "solidity",
-      "swift",
-      "todotxt",
-      "toml",
-      "tsx",
-      "typescript",
-      "verilog",
-      "vim",
-      "yaml",
-  },
-  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "" }, -- List of parsers to ignore installing
-  autopairs = {
-    enable = true,
-  },
-  highlight = {
-    enable = true, -- false will disable the whole extension
-    disable = { "" }, -- list of language that will be disabled
-    additional_vim_regex_highlighting = true,
-  },
-  indent = { enable = true, disable = { "yaml" } },
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
-  },
+        additional_vim_regex_highlighting = false,
+    },
+    config = function(_, opts)
+    --     ---@diagnostic disable-next-line: missing-fields
+        require('nvim-treesitter.configs').setup(opts)
+
+        -- There are additional nvim-treesitter modules that you can use to interact
+        -- with nvim-treesitter. You should go explore a few and see what interests you:
+        --
+        --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
+        --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
+        --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+    end,
 }
