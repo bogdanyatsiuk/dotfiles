@@ -12,6 +12,7 @@ setopt SHARE_HISTORY
 # Editor
 export EDITOR=nvim
 export VISUAL=nvim
+export GIT_EDITOR=nvim
 
 # Enable colors and change prompt:
 autoload -U colors && colors
