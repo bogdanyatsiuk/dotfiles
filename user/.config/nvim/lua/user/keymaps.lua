@@ -46,10 +46,10 @@ key.nmap("<leader>d", '"_d')
 key.vmap("<leader>d", '"_d')
 
 -- Toggle listchars
-key.nmap("<leader>tc1", '<cmd>set listchars=tab:▸\\ ,trail:·<cr>')
-key.nmap("<leader>tc2", '<cmd>set listchars=tab:▸\\ ,trail:·,eol:↲<cr>')
-key.nmap("<leader>tc3", '<cmd>set listchars=tab:▸\\ ,trail:·,eol:↲,nbsp:𛲖<cr>')
-key.nmap("<leader>tc4", '<cmd>set listchars=tab:▸\\ ,trail:\\ ,eol:\\ ,nbsp:\\ <cr>')
+key.nmap("<leader>tl1", '<cmd>set listchars=tab:▸\\ ,trail:·<cr>')
+key.nmap("<leader>tl2", '<cmd>set listchars=tab:▸\\ ,trail:·,eol:↲<cr>')
+key.nmap("<leader>tl3", '<cmd>set listchars=tab:▸\\ ,trail:·,eol:↲,nbsp:𛲖<cr>')
+key.nmap("<leader>tl4", '<cmd>set listchars=tab:▸\\ ,trail:\\ ,eol:\\ ,nbsp:\\ <cr>')
 
 key.nmap("<Esc>", '<cmd>lua require("user.helpers.utils").dismiss_notice_and_higlights()<cr>', { desc = "Dismiss Notice notifications and highlights" })
 key.nmap("g<Right>", '<cmd>lua require("user.helpers.utils").open_github_url()<cr>', { desc = "Open github url under the cursor" })

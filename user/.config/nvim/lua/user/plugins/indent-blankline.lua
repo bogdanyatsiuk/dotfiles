@@ -28,6 +28,7 @@ return {
                 "notify",
                 "nvimtree",
                 "oil",
+                "oil_preview",
                 "toggleterm",
                 "trouble",
             },

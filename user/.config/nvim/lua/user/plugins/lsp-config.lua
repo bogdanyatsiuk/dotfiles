@@ -99,7 +99,7 @@ lsp.on_attach = function(client, bufnr)
     nmap("gl", vim.diagnostic.open_float, "Open Diagnostic")
 
     -- nmap("K", vim.lsp.buf.hover, "")
-    nmap("<leader>sh", vim.lsp.buf.signature_help, "Show [S]ignature [H]elp")
+    nmap("gK", vim.lsp.buf.signature_help, "Signature Help")
 
     -- nmap("<leader>ls", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[L]ist Workspace [S]ymbols")
     nmap("<leader>cwl", function()
@@ -251,7 +251,13 @@ return {
     },
     {
         "j-hui/fidget.nvim",
-        opts = {},
+        opts = {
+            integration = {
+                ["nvim-tree"] = {
+                    enable = false,
+                },
+            },
+        },
         event = "VeryLazy",
     },
 }

@@ -16,7 +16,8 @@ key.nmap("<leader>u", "<cmd>lua require('telescope').extensions.undo.undo()<cr>"
 key.nmap("<leader>fM", "<cmd>lua require('telescope').extensions.bookmarks.bookmarks({})<cr>", { desc = 'Fuzzy search browser bookmarks', })
 key.nmap("<leader>fy", "<cmd>lua require('user.helpers.telescope').neoclip()<cr>")
 key.nmap("<leader>fm", "<cmd>lua require('user.helpers.telescope').macros()<cr>")
-key.nmap("<leader>fl", "<cmd>lua require'telescope.builtin'.symbols{}<cr>")
+key.nmap("<leader>fl", "<cmd>lua require('telescope.builtin').symbols{}<cr>")
+key.nmap("<leader>fk", "<cmd>lua require('telescope.builtin').keymaps()<cr>")
 
 return {
     {

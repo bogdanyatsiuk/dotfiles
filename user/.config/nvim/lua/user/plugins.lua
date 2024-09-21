@@ -17,8 +17,6 @@ require("lazy").setup({
         require 'user.plugins.oil',
         require 'user.plugins.telescope',
         require 'user.plugins.harpoon',
-        -- folke/flash.nvim
-        -- echasnovski/mini.jump2d
         require 'user.plugins.tmux-navigator',
 
         -- LSP & Syntax
@@ -48,6 +46,9 @@ require("lazy").setup({
         -- Formatters & Linters
 
         -- Debug
+        -- jay-babu/mason-nvim-dap.nvim
+        -- rcarriga/nvim-dap-ui
+        -- theHamsta/nvim-dap-virtual-text
         -- nvim-dap
         -- nvim-dap-ui
         -- vimspector
@@ -60,6 +61,8 @@ require("lazy").setup({
         require 'user.plugins.aerial',
         require 'user.plugins.outline',
         require 'user.plugins.ufo',
+        require 'user.plugins.flash',
+        require 'user.plugins.toggleterm',
 
         -- Editing
         require 'user.plugins.comments',
@@ -68,11 +71,11 @@ require("lazy").setup({
         require 'user.plugins.todo-comments',
         require 'user.plugins.mini-ai',
         require 'user.plugins.mini-surround',
-        -- Wansmer/treesj
 
         -- Git
         require 'user.plugins.gitsigns',
         require 'user.plugins.neogit',
+        -- diff
 
         -- UI
         require 'user.plugins.noice',
@@ -82,6 +85,7 @@ require("lazy").setup({
         -- markdown
         -- preview
         -- obsidian
+        -- https://github.com/3rd/image.nvim
         -- focus
 
         -- AI
@@ -89,10 +93,25 @@ require("lazy").setup({
         -- Extras
         require 'user.plugins.which-key',
         -- goolord/alpha-nvim or nvimdev/dashboard-nvim
+        -- Wansmer/treesj
+        -- rmagatti/goto-preview
+        -- nvim-spectre
+        -- refactoring.nvim
+        -- folke/zen-mode.nvim
+        -- stevearc/dressing.nvim
+        -- HakonHarnes/img-clip.nvim
+        -- Shatur/neovim-session-manager
+        -- ahmedkhalf/project.nvim
+        -- tiagovla/scope.nvim
+        -- folke/trouble.nvim
+        -- folke/twilight.nvim
+        -- windwp/windline.nvim
+        -- akinsho/git-conflict.nvim
+        -- wojciech-kulik/xcodebuild.nvim
     },
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
     install = { colorscheme = { "tokyonight" } },
     -- automatically check for plugin updates
-    checker = { enabled = true },
+    checker = { enabled = false },
 })

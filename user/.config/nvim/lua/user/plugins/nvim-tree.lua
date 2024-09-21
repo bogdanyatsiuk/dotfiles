@@ -1,15 +1,13 @@
-local key = require("user.helpers.keymap_funcs")
+local function is_arg_dir()
+    return vim.fn.argc() == 1 and vim.fn.isdirectory(vim.fn.argv(0)) == 1
+end
 
-key.nmap("<Leader>e", ":NvimTreeToggle<CR>")
--- nmap("<Leader>R", ":NvimTreeRefresh<CR>")
-key.nmap("<Leader>i", ":NvimTreeFindFile<CR>")
+local function load_keys()
+    if is_arg_dir() then return nil else return { "<Leader>e", "<Leader>i" } end
+end
 
-local function load_event()
-    if vim.fn.argc() == 1 and vim.fn.isdirectory(vim.fn.argv(0)) == 1 then
-        return nil
-    else
-        return "VeryLazy"
-    end
+local function load_cmd()
+    if is_arg_dir() then return nil else return { "NvimTreeToggle", "NvimTreeFindFile" } end
 end
 
 local function my_on_attach(bufnr)
@@ -32,9 +30,14 @@ end
 
 return {
     "nvim-tree/nvim-tree.lua",
-    event = load_event(),
+    cmd = load_cmd(),
+    keys = load_keys(),
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
+        local key = require("user.helpers.keymap_funcs")
+        key.nmap("<Leader>e", ":NvimTreeToggle<CR>", { desc = "NvimTree Toggle" })
+        key.nmap("<Leader>i", ":NvimTreeFindFile<CR>", { desc = "NvimTree Inspect File" })
+
         require("nvim-tree").setup {
             renderer = {
                 indent_markers = {

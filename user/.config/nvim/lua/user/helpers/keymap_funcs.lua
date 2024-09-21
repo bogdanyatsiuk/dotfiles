@@ -8,7 +8,7 @@ local function keymap(mode, lhs, rhs, opts)
         end
     end
 
-    vim.keymap.set(mode, lhs, rhs, opts or map_opts)
+    vim.keymap.set(mode, lhs, rhs, map_opts)
 end
 
 function M.imap(lhs, rhs, opts)
@@ -29,6 +29,10 @@ end
 
 function M.amap(lhs, rhs, opts)
     keymap("", lhs, rhs, opts)
+end
+
+function M.mmap(mode, lhs, rhs, opts)
+    keymap(mode, lhs, rhs, opts)
 end
 
 return M
