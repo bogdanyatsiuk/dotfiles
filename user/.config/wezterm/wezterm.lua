@@ -31,7 +31,8 @@ config.font = wezterm.font 'MesloLGM Nerd Font'
 config.font_size = 14.5
 
 config.default_cursor_style = 'SteadyBar'
-config.cursor_thickness = '200%'
+-- config.cursor_thickness = '200%'
+config.cursor_thickness = '1.5pt'
 
 config.keys = {
     k.cmd_to_tmux_key("1", "1"), -- navigate to window (1-9)
@@ -74,6 +75,29 @@ config.keys = {
 
     k.cmd_to_send_string("/", "gcc"),
 }
+
+wezterm.on('user-var-changed', function(window, pane, name, value)
+    local overrides = window:get_config_overrides() or {}
+    if name == "ZEN_MODE" then
+        local incremental = value:find("+")
+        local number_value = tonumber(value)
+        if incremental ~= nil then
+            while (number_value > 0) do
+                window:perform_action(wezterm.action.IncreaseFontSize, pane)
+                number_value = number_value - 1
+            end
+            overrides.enable_tab_bar = false
+        elseif number_value < 0 then
+            window:perform_action(wezterm.action.ResetFontSize, pane)
+            overrides.font_size = nil
+            overrides.enable_tab_bar = true
+        else
+            overrides.font_size = number_value
+            overrides.enable_tab_bar = false
+        end
+    end
+    window:set_config_overrides(overrides)
+end)
 
 -- config.debug_key_events = true
 

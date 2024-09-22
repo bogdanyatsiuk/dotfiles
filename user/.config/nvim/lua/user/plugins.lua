@@ -23,6 +23,7 @@ require("lazy").setup({
         require 'user.plugins.treesitter',
         require 'user.plugins.lsp-config',
         require 'user.plugins.completions',
+
         -- folke/trouble.nvim
         -- mason :
         --    clangd - c/c++
@@ -75,7 +76,6 @@ require("lazy").setup({
         -- Git
         require 'user.plugins.gitsigns',
         require 'user.plugins.neogit',
-        -- diff
 
         -- UI
         require 'user.plugins.noice',
@@ -89,15 +89,16 @@ require("lazy").setup({
         -- focus
 
         -- AI
+        -- yetone/avante.nvim
 
         -- Extras
         require 'user.plugins.which-key',
+        require 'user.plugins.zen-mode'
         -- goolord/alpha-nvim or nvimdev/dashboard-nvim
         -- Wansmer/treesj
         -- rmagatti/goto-preview
         -- nvim-spectre
         -- refactoring.nvim
-        -- folke/zen-mode.nvim
         -- stevearc/dressing.nvim
         -- HakonHarnes/img-clip.nvim
         -- Shatur/neovim-session-manager
