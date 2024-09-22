@@ -23,8 +23,8 @@ require("lazy").setup({
         require 'user.plugins.treesitter',
         require 'user.plugins.lsp-config',
         require 'user.plugins.completions',
+        require 'user.plugins.trouble',
 
-        -- folke/trouble.nvim
         -- mason :
         --    clangd - c/c++
         --    rust-analyzer
@@ -104,11 +104,11 @@ require("lazy").setup({
         -- Shatur/neovim-session-manager
         -- ahmedkhalf/project.nvim
         -- tiagovla/scope.nvim
-        -- folke/trouble.nvim
         -- folke/twilight.nvim
         -- windwp/windline.nvim
         -- akinsho/git-conflict.nvim
         -- wojciech-kulik/xcodebuild.nvim
+        -- kawre/leetcode.nvim
     },
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
