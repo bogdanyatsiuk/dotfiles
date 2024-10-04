@@ -11,7 +11,9 @@ local config = wezterm.config_builder()
 config.default_prog = { 'zsh', '-l', '-c', 'tmux attach-session || tmux new -s main' }
 
 -- Changing the color scheme:
-config.color_scheme = 'Catppuccin Mocha'
+-- config.color_scheme = 'Tokyo Night'
+config.color_scheme = 'Tokyo Night Moon'
+-- config.color_scheme = 'Catppuccin Mocha'
 -- config.color_scheme = 'Ayu Mirage (Gogh)'
 -- config.color_scheme = 'Banana Blueberry'
 -- config.color_scheme = 'Campbell (Gogh)'
