@@ -2,6 +2,11 @@
 local wezterm = require 'wezterm'
 local k = require("utils/keymap")
 
+-- To have proper displaying for images inside of neovim, need to install kitty term info
+-- tempfile=$(mktemp) && curl -o "$tempfile" https://raw.githubusercontent.com/kovidgoyal/kitty/master/terminfo/kitty.terminfo && tic -x -o ~/.terminfo "$tempfile" && rm "$tempfile"
+-- and set default term to kitty
+-- term = "xterm-kitty"
+
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 

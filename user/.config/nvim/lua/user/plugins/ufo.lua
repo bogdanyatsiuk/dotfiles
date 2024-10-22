@@ -65,8 +65,15 @@ return {
             return newVirtText
         end
 
+        local ftMap = {
+           markdown = {'treesitter', 'indent'}
+        }
         require('ufo').setup({
-            fold_virt_text_handler = handler
+            fold_virt_text_handler = handler,
+
+            provider_selector = function(bufnr, filetype, buftype)
+                return ftMap[filetype]
+            end
         })
     end,
 }

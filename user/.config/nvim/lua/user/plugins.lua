@@ -24,6 +24,9 @@ require("lazy").setup({
         require 'user.plugins.lsp-config',
         require 'user.plugins.completions',
         require 'user.plugins.trouble',
+        -- utilyre/barbecue.nvim
+        -- Bekaboo/dropbar.nvim
+        -- nvim-treesitter/nvim-treesitter-context
 
         -- mason :
         --    clangd - c/c++
@@ -76,17 +79,31 @@ require("lazy").setup({
         -- Git
         require 'user.plugins.gitsigns',
         require 'user.plugins.neogit',
+        -- akinsho/git-conflict.nvim
+        -- f-person/git-blame.nvim
+        -- moyiz/git-dev.nvim
+        -- niuiic/git-log.nvim
 
         -- UI
         require 'user.plugins.noice',
+        -- stevearc/dressing.nvim
             -- barbecue.nvim
 
         -- Notes
-        -- markdown
-        -- preview
-        -- obsidian
-        -- https://github.com/3rd/image.nvim
-        -- focus
+        require 'user.plugins.render-markdown',
+        require 'user.plugins.markdown-preview',
+        -- require 'user.plugins.markdown',
+        -- bullets-vim/bullets.vim
+        -- tadmccorkle/markdown.nvim
+        -- roodolv/markdown-toggle.nvim
+        -- antonk52/markdowny.nvim
+        -- epwalsh/obsidian.nvim
+        -- require 'user.plugins.image',
+        -- mason: markdown-cli2 / markdown-toc / marksman
+        -- vale cli
+        -- For inspiration
+
+        -- stevearc/overseer.nvim
 
         -- AI
         -- yetone/avante.nvim
@@ -109,6 +126,19 @@ require("lazy").setup({
         -- akinsho/git-conflict.nvim
         -- wojciech-kulik/xcodebuild.nvim
         -- kawre/leetcode.nvim
+        -- nvim-pack/nvim-spectre
+        -- ahmedkhalf/project.nvim
+
+        -- Usless
+        -- https://github.com/Eandrju/cellular-automaton.nvim
+        -- https://github.com/tamton-aquib/duck.nvim
+        -- https://github.com/rhysd/vim-syntax-christmas-tree
+        -- https://github.com/AndrewRadev/dealwithit.vim
+        -- https://github.com/folke/drop.nvim
+        -- https://github.com/tamton-aquib/zone.nvim
+        -- https://github.com/letieu/hacker.nvim
+        -- https://github.com/NStefan002/donut.nvim
+        -- https://github.com/blumaa/octopus.nvim
     },
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
@@ -116,3 +146,25 @@ require("lazy").setup({
     -- automatically check for plugin updates
     checker = { enabled = false },
 })
+
+-- TODO:
+-- - [ ] Markdown
+--     - [ ] Editing / Toggling
+--     - [ ] Preview in browser
+--     - [ ] spell
+--     - [ ] Images
+--     - [ ] LSP
+-- - [ ] Git
+--     - [ ] Conflicts
+--     - [ ] Log selected file
+-- - [ ] Context line
+-- - [ ] LSP and Tools
+--     - [ ] Rust
+--     - [ ] Go
+--     - [ ] Python
+--     - [ ] Swift
+-- - [ ] DAP
+-- - [ ] Formatters and linters
+-- - [ ] Other languages support
+-- - [ ] AI
+-- - [ ] Additional plugins

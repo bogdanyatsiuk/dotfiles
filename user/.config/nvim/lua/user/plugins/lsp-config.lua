@@ -42,6 +42,9 @@ local servers = {
             Lua = {}
         },
     },
+    -- marksman = {
+    --     ensure_installed = true,
+    -- },
     -- mojo = {},
     -- ocamllsp = {}
     -- pyright = {},
