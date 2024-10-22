@@ -46,6 +46,7 @@ formulaes=(
     "Editors / Viewers" # Editors / Viewers
     "bat:bat"
     "neovim:NeoVim"
+    "neovide:Neovide"
     "Docs & Help" # Docs & Help
     "tldr:tldr"
     "howdoi:howdoi"
@@ -99,6 +100,7 @@ formulaes=(
     "koekeishiya/formulae/skhd:skhd"
     "FelixKratz/formulae/sketchybar:SketchyBar"
     "yqrashawn/goku/goku:Goku"
+    "FelixKratz/formulae/borders:Borders"
 #    "Zsh" # Zsh
     "starship:starship"
     "zsh:Zsh"

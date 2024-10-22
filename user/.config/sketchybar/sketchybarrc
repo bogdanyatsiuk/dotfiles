@@ -40,37 +40,67 @@ sketchybar --default updates=when_shown                    \
 # https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
 # to indicate active and available mission control spaces
 
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+sketchybar --add event aerospace_workspace_change
 
-for i in "${!SPACE_ICONS[@]}"
-do
-  sid=$(($i+1))
-  sketchybar --add space space.$sid left                                 \
-             --set space.$sid associated_space=$sid                      \
-                              icon="${SPACE_ICONS[i]}$(${PLUGIN_DIR}/windows_count.sh ${SPACE_ICONS[i]})"                     \
-                              icon.padding_left=8                        \
-                              icon.padding_right=8                       \
-                              background.padding_left=5                  \
-                              background.padding_right=5                 \
-                              background.color=0x44ffffff                \
-                              background.corner_radius=5                 \
-                              background.height=22                       \
-                              background.drawing=off                     \
-                              label.drawing=off                          \
-                              script="$PLUGIN_DIR/space.sh"              \
-                              click_script="osascript $PLUGIN_DIR/switch_space.scpt $(($sid+17))" # 18 - key code for 1, 19 - 2, etc.
+for sid in $(aerospace list-workspaces --all); do
+    sketchybar                                                  \
+        --add item space.$sid left                              \
+        --subscribe space.$sid aerospace_workspace_change       \
+        --set space.$sid                                        \
+            background.color=0x44ffffff                         \
+            background.corner_radius=5                          \
+            background.height=20                                \
+            background.padding_left=3                           \
+            background.padding_right=3                          \
+            background.drawing=off                              \
+            icon="$sid$(${PLUGIN_DIR}/windows_count.sh $sid)"   \
+            icon.padding_left=8                                 \
+            icon.padding_right=8                                \
+            label.drawing=off                                   \
+            click_script="aerospace workspace $sid"             \
+            script="$CONFIG_DIR/plugins/aerospace.sh $sid"
 done
+
+# Update windows count
+sketchybar --add item update_windows left                       \
+            --set update_windows drawing=off                    \
+                updates=on                                      \
+                script="$PLUGIN_DIR/update_windows_count.sh"    \
+            --subscribe update_windows space_windows_change     \
+            --subscribe update_windows aerospace_workspace_change
+
+# SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+#
+# for i in "${!SPACE_ICONS[@]}"
+# do
+#   sid=$(($i+1))
+#   sketchybar --add space space.$sid left                                 \
+#              --set space.$sid associated_space=$sid                      \
+#                               icon="${SPACE_ICONS[i]}$(${PLUGIN_DIR}/windows_count.sh ${SPACE_ICONS[i]})"                     \
+#                               icon.padding_left=8                        \
+#                               icon.padding_right=8                       \
+#                               background.padding_left=5                  \
+#                               background.padding_right=5                 \
+#                               background.color=0x44ffffff                \
+#                               background.corner_radius=5                 \
+#                               background.height=22                       \
+#                               background.drawing=off                     \
+#                               label.drawing=off                          \
+#                               script="$PLUGIN_DIR/space.sh"              \
+#                               click_script="osascript $PLUGIN_DIR/switch_space.scpt $(($sid+17))" # 18 - key code for 1, 19 - 2, etc.
+# done
+
 
 ##### Adding Left Items #####
 # We add some regular items to the left side of the bar
 # only the properties deviating from the current defaults need to be set
 
 # Yabai mode
-sketchybar --add item yabai_mode left \
-              --set yabai_mode update_freq=15 \
-              --set yabai_mode script="$PLUGIN_DIR/yabai_mode.sh" \
-              --set yabai_mode click_script="$PLUGIN_DIR/yabai_mode_click.sh" \
-              --subscribe yabai_mode space_change
+# sketchybar --add item yabai_mode left \
+#               --set yabai_mode update_freq=15 \
+#               --set yabai_mode script="$PLUGIN_DIR/yabai_mode.sh" \
+#               --set yabai_mode click_script="$PLUGIN_DIR/yabai_mode_click.sh" \
+#               --subscribe yabai_mode space_change
 
 # Window Zoom State
 sketchybar --add item window_zoom left \
@@ -82,7 +112,7 @@ sketchybar --add item window_zoom left \
                               script="$PLUGIN_DIR/window_zoom_status.sh" \
               --subscribe window_zoom space_change
 
-# Separator + WIndow Title
+# Separator + Window Title
 sketchybar --add item space_separator left                            \
            --set space_separator icon=                               \
                                  background.padding_left=15           \
@@ -93,6 +123,34 @@ sketchybar --add item space_separator left                            \
            --set window_title    script="$PLUGIN_DIR/window_title.sh" \
                                  icon.drawing=off                     \
            --subscribe window_title front_app_switched
+
+### Center Items
+#sketchybar --add bracket spaces space.1 space.2 space.3     \
+# sketchybar --add item apps_icons center                            \
+#            --set apps_icons background.color=#aa0000ff  \
+#                                  label.drawing=off                    \
+#            script="$PLUGIN_DIR/apps_icons.sh" \
+#            --subscribe apps_icons front_app_switched
+#
+# sketchybar --add bracket '/app\..*/' center    \
+#            --set         spaces background.color=0xffffffff \
+#                                 background.corner_radius=4  \
+#                                 background.height=20
+
+# source "$PLUGIN_DIR/apps_icons.sh"
+
+sketchybar --add item apps_icons center \
+        --set apps_icons drawing=off \
+        updates=on \
+        script="$PLUGIN_DIR/apps_icons.sh" \
+        --subscribe apps_icons aerospace_workspace_change \
+        --subscribe apps_icons space_windows_change
+
+sketchybar --add item front_app_icon center \
+        --set front_app_icon drawing=off \
+        updates=on \
+        script="$PLUGIN_DIR/update_front_app_color.sh" \
+        --subscribe front_app_icon front_app_switched
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
@@ -114,15 +172,25 @@ sketchybar --add event input_change 'AppleSelectedInputSourcesChangedNotificatio
                  label.padding_right=20                                            \
            --subscribe keyboard input_change
 
-sketchybar --add item AirPods right                                               \
-           --set AirPods script="$PLUGIN_DIR/airpods.sh"                          \
-                         label.padding_right=20                                  \
-           --set AirPods update_freq=20
+# sketchybar --add item AirPods right                                               \
+#            --set AirPods script="$PLUGIN_DIR/airpods.sh"                          \
+#                          label.padding_right=20                                  \
+#            --set AirPods update_freq=20
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration and
 # should never be run in an item script.
 
 sketchybar --update
+sketchybar --set "space.$(aerospace list-workspaces --focused)" background.drawing=on
 
 echo "sketchybar configuration loaded.."
+
+# TODO:
+# - [ ] Show layout type
+# - [ ] Apps on the space in center:
+# - [ ] Make equally spaced windows
+# - [ ] Zoom state
+# - [ ] Mic
+# - [ ] VPN
+# - [ ] zen mode

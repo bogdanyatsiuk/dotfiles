@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-cnt=$(yabai -m query --windows --space $1 | jq 'map(select(.subrole!="AXSystemDialog.Hammerspoon")) | length'
-)
+# cnt=$(yabai -m query --windows --space $1 | jq 'map(select(.subrole!="AXSystemDialog.Hammerspoon")) | length')
+cnt=$(aerospace list-windows --workspace $1 --count)
 
 case ${cnt} in
 '1') echo "¹" ;;

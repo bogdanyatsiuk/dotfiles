@@ -1,4 +1,4 @@
-a_!/bin/bash
+#!/bin/bash
 
 # zsh
 ln -s ~/dotfiles/user/.zshrc_main ~/.zshrc_main
@@ -46,4 +46,7 @@ ln -s ~/dotfiles/user/.config/yazi/theme.toml ~/.config/yazi/theme.toml
 ln -s ~/dotfiles/user/.config/yazi/keymap.toml ~/.config/yazi/keymap.toml
 
 # LazyGit
-ln -s ~/dotfiles/user/.config/lazygit/config.yml '~/Library/Application Support/lazygit/config.yml'
+ln -s ~/dotfiles/user/.config/lazygit/config.yml ~/Library/Application\ Support/lazygit/config.yml
+
+# AeroSpace
+ln -s ~/dotfiles/user/.config/aerospace ~/.config/aerospace

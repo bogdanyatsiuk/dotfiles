@@ -5,8 +5,9 @@ print_header "Cask Install"
 formulaes=(
     "Windows" # Windows
 #    "amethyst:Amethyst"
-    "spectacle:Spectacle"
+    # "spectacle:Spectacle"
 #    "xquartz:XQuartz"
+    "nikitabobko/tap/aerospace:AeroSpace"
     "Terminals" # Terminals
     #"alacritty:Alacritty"
     #"iterm2:iTerm2"
@@ -54,7 +55,7 @@ formulaes=(
     "Documents/Books" # Documents/Books
     "kindle:Kindle for Mac"
     "libreoffice:LibreOffice"
-    "ONLYOFFICE:onlyoffice"
+    # "ONLYOFFICE:onlyoffice"
     "djview:djview"
     "Video" # Video
     "vlc:VLC media player"
