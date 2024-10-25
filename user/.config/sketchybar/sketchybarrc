@@ -103,14 +103,14 @@ sketchybar --add item update_windows left                       \
 #               --subscribe yabai_mode space_change
 
 # Window Zoom State
-sketchybar --add item window_zoom left \
-            --set window_zoom background.padding_left=0 \
-                              background.padding_right=0 \
-                              label.padding_left=0 \
-                              label.padding_right=10 \
-                              icon.drawing=off \
-                              script="$PLUGIN_DIR/window_zoom_status.sh" \
-              --subscribe window_zoom space_change
+# sketchybar --add item window_zoom left \
+#             --set window_zoom background.padding_left=0 \
+#                               background.padding_right=0 \
+#                               label.padding_left=0 \
+#                               label.padding_right=10 \
+#                               icon.drawing=off \
+#                               script="$PLUGIN_DIR/window_zoom_status.sh" \
+#               --subscribe window_zoom space_change
 
 # Separator + Window Title
 sketchybar --add item space_separator left                            \
@@ -185,12 +185,3 @@ sketchybar --update
 sketchybar --set "space.$(aerospace list-workspaces --focused)" background.drawing=on
 
 echo "sketchybar configuration loaded.."
-
-# TODO:
-# - [ ] Show layout type
-# - [ ] Apps on the space in center:
-# - [ ] Make equally spaced windows
-# - [ ] Zoom state
-# - [ ] Mic
-# - [ ] VPN
-# - [ ] zen mode
