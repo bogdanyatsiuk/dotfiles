@@ -50,3 +50,6 @@ ln -s ~/dotfiles/user/.config/lazygit/config.yml ~/Library/Application\ Support/
 
 # AeroSpace
 ln -s ~/dotfiles/user/.config/aerospace ~/.config/aerospace
+
+# gdu
+mkdir ~/.config/gdu && ln -s ~/dotfiles/user/.config/gdu/gdu.yaml ~/.config/gdu/gdu.yaml
