@@ -13,6 +13,7 @@ key.imap("<M-,>", "<Esc><S-a>,<Esc>")
 key.imap("<M-;>", "<Esc><S-a>;<Esc>")
 
 key.nmap("<Leader>w", ":w<CR>")
+key.nmap("<Leader>W", ":wq<CR>")
 -- key.nmap("<Leader>c", ":", { silent=false })
 key.nmap("<Leader>l", ":noh<CR>")
 key.nmap("<Leader>q", ":q<CR>")
