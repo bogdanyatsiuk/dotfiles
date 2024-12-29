@@ -42,6 +42,8 @@ alias .....="builtin cd ../../../.."
 alias c="clear"
 alias q="exit"
 
+alias tma="tmux attach-session || tmux new -s main"
+
 function custom_mkdir() {
     mkdir -p "$@" && builtin cd "$@";
 }
@@ -124,6 +126,11 @@ alias ql='qlmanage -p "$@" >& /dev/null'
 alias o="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 alias om="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse -m | xargs nvim"
 alias d="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse -m | xargs nvim -d"
+
+#=====================================
+# Monitor temperature
+alias ctemp="sudo powermetrics --samplers smc | grep -i 'CPU die temperature'"
+alias gtemp="sudo powermetrics --samplers smc | grep -i 'GPU die temperature'"
 
 #=====================================
 # NeoVim
