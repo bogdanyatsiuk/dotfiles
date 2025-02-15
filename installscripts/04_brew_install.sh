@@ -112,6 +112,7 @@ formulaes=(
     "tmux:tmux"
     "tmuxinator:tmuxinator"
     "Xcode / iOS" # Xcode / iOS
+    "xcode-build-server:Xcode-Build-Server"
     "bluepill:bluepill"
     "carthage:Carthage"
     "chisel:chisel"

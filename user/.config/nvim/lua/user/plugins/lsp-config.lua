@@ -73,6 +73,14 @@ local servers = {
     -- solidity_ls_nomicfoundation = {},
     sourcekit = {
         filetypes = { "swift" }, -- , "objective-c", "objective-cpp" },
+        -- root_dir = util.root_pattern('Package.swift', 'buildServer.json', 'compile_commands.json', '.git'),
+        capabilities = {
+            workspace = {
+                didChangeWatchedFiles = {
+                    dynamicRegistration = true,
+                },
+            },
+        },
     },
     -- tsserver = {},
 }
@@ -195,12 +203,13 @@ end
 return {
     {
         'neovim/nvim-lspconfig',
-        -- event = { "BufReadPost", "BufNewFile" },
+        event = { "BufReadPre", "BufNewFile" },
         -- event = "VeryLazy",
         dependencies = {
             {
                 "williamboman/mason.nvim",
                 "williamboman/mason-lspconfig.nvim",
+                { "antosha417/nvim-lsp-file-operations", config = true },
                 -- {
                 --     "SmiteshP/nvim-navbuddy",
                 --     dependencies = {

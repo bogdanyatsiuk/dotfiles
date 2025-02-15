@@ -55,6 +55,10 @@ key.nmap("<leader>tl4", '<cmd>set listchars=tab:▸\\ ,trail:\\ ,eol:\\ ,nbsp:\\
 key.nmap("<Esc>", '<cmd>lua require("user.helpers.utils").dismiss_notice_and_higlights()<cr>', { desc = "Dismiss Notice notifications and highlights" })
 key.nmap("g<Right>", '<cmd>lua require("user.helpers.utils").open_github_url()<cr>', { desc = "Open github url under the cursor" })
 
+key.nmap("<leader>x", "<cmd>.lua<cr>", { desc = "Execute current lua line" })
+key.vmap("<leader>x", "<cmd>lua<cr>", { desc = "Execute current lua line" })
+key.nmap("<leader><leader>x", "<cmd>source %<cr>", { desc = "Reload current file" })
+
 ----------------------------
 -- -- Nvim-Tree
 -- key.nmap("<Leader>e", ":NvimTreeToggle<CR>")

@@ -193,3 +193,8 @@ backspace = ['close-all-windows-but-current', 'mode main']
 [workspace-to-monitor-force-assignment]
 9 = 'built-in'                   # Case insensitive regex substring
 
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+check-further-callbacks = false
+run = 'move-node-to-workspace 4'

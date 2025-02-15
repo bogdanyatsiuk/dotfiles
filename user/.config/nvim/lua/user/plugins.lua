@@ -24,6 +24,7 @@ require("lazy").setup({
         require 'user.plugins.lsp-config',
         require 'user.plugins.completions',
         require 'user.plugins.trouble',
+        require 'user.plugins.xcodebulid',
         -- utilyre/barbecue.nvim
         -- Bekaboo/dropbar.nvim
         -- nvim-treesitter/nvim-treesitter-context
@@ -58,6 +59,8 @@ require("lazy").setup({
         -- vimspector
 
         -- Build / Run / Eval / Test
+
+        -- folke/snacks.nvim
 
         -- Editor (UI)
         require 'user.plugins.indent-blankline',
@@ -107,6 +110,14 @@ require("lazy").setup({
 
         -- AI
         -- yetone/avante.nvim
+        -- gen.nvim
+        -- copilop.vim
+        -- copilot-cmp
+        -- codium
+        -- tabnine
+        -- minuet-ai.nvim
+        -- copitol-chat.nvim
+        -- gp.nvim
 
         -- Extras
         require 'user.plugins.which-key',
