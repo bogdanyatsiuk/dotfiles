@@ -4,25 +4,18 @@ print_header "Cask Install"
 
 formulaes=(
     "Windows" # Windows
-#    "amethyst:Amethyst"
-    # "spectacle:Spectacle"
-#    "xquartz:XQuartz"
     "nikitabobko/tap/aerospace:AeroSpace"
     "Terminals" # Terminals
-    #"alacritty:Alacritty"
-    #"iterm2:iTerm2"
-    #"kitty:Kitty"
     "wezterm:wezterm"
+    "ghostty:ghostty"
     "Browsers" # Browsers
 #    "firefox:Mozilla Firefox"
     "google-chrome:Google Chrome"
     "brave-browser:Brave"
-    "min:Min Browser"
+    "arc:Arc"
     "tor-browser:Tor Browser"
     "Editors" # Editors
-    "macvim:MacVim"
     "hex-fiend:Hex Fiend"
-    "pycharm-ce:PyCharm CE"
     "sublime-text:Sublime Text"
     "swiftformat-for-xcode:SwiftFormat for Xcode"
     "visual-studio-code:Microsoft Visual Studio Code"
@@ -33,11 +26,11 @@ formulaes=(
     "zoom:Zoom"
     "Networking" # Networking
     "altair-graphql-client:Altair GraphQL Client"
-    "charles:Charles"
+    #"charles:Charles"
 #    "graphiql:GraphiQL"
 #    "graphql-playground:GraphQL Playground"
 #    "insomnia:Insomnia"
-    "postman:Postman"
+    #"postman:Postman"
     "proxyman:Proxyman"
     "Documentation/Drawing" # Documentation/Drawing
     "drawio:draw.io Desktop"
@@ -47,11 +40,10 @@ formulaes=(
     "valentina-studio:Valentina Studio"
     "Graphics" # Graphics
     "gimp:GIMP"
-    "inkscape:Inkscape"
+    #"inkscape:Inkscape"
     "imagealpha:ImageAlpha"
     "imageoptim:ImageOptim"
     "licecap:LICEcap"
-    "skitch:Skitch"
     "Documents/Books" # Documents/Books
     "kindle:Kindle for Mac"
     "libreoffice:LibreOffice"
@@ -66,14 +58,14 @@ formulaes=(
 #    "joplin:Joplin"
     "notion:Notion"
     "obsidian:Obsidian"
-    "raindropio:Raindrop.io"
+    #"raindropio:Raindrop.io"
     "zotero:Zotero"
     "Tools" # Tools
     "ghidra:Ghidra"
     "appcleaner:AppCleaner"
     "karabiner-elements:Karabiner Elements"
     "raycast:Raycast"
-    "spacelauncher:SpaceLauncher"
+    #"spacelauncher:SpaceLauncher"
     "sourcetree:Atlassian SourceTree"
     "the-unarchiver:The Unarchiver"
     "quicklook-json:quick look JSON"

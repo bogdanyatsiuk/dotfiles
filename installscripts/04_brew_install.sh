@@ -96,10 +96,10 @@ formulaes=(
     "mps-youtube:mps-youtube"
     "youtube-dl:youtube-dl"
     "Windows Management" # Windows Management
-    "koekeishiya/formulae/yabai:yabai"
-    "koekeishiya/formulae/skhd:skhd"
+    #"koekeishiya/formulae/yabai:yabai"
+    #"koekeishiya/formulae/skhd:skhd"
     "FelixKratz/formulae/sketchybar:SketchyBar"
-    "yqrashawn/goku/goku:Goku"
+    #"yqrashawn/goku/goku:Goku"
     "FelixKratz/formulae/borders:Borders"
 #    "Zsh" # Zsh
     "starship:starship"
@@ -110,13 +110,13 @@ formulaes=(
     "zsh-syntax-highlighting:zsh-syntax-highlighting"
     "Tmux" # Tmux
     "tmux:tmux"
-    "tmuxinator:tmuxinator"
+    #"tmuxinator:tmuxinator"
     "Xcode / iOS" # Xcode / iOS
     "xcode-build-server:Xcode-Build-Server"
-    "bluepill:bluepill"
-    "carthage:Carthage"
-    "chisel:chisel"
-    "cocoapods:Cocoapods"
+    #"bluepill:bluepill"
+    #"carthage:Carthage"
+    #"chisel:chisel"
+    #"cocoapods:Cocoapods"
     #"ideviceinstaller:ideviceinstaller"
     #"ios-deploy:ios-deploy"
     #"ios-sim:ios-sim"
