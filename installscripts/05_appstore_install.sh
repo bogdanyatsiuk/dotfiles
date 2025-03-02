@@ -11,10 +11,9 @@ apps=(
     "1524738503:Tools for Xcode"
     "1044549675:Elmedia Video Player"
     "784801555:Microsoft OneNote"
-    "568494494:Pocket"
+    "1564031042:Omnivore"
     "1352778147:Bitwarden"
     "1149778308:iCompta"
-    "id1518425043:Boop"
     )
 
 for app in "${apps[@]}"

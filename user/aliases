@@ -152,4 +152,6 @@ function nvims() {
   NVIM_APPNAME=$cfg nvim $@
 }
 
-source ~/local_aliases
+if [ -f ~/local_aliases ]; then
+    source ~/local_aliases
+fi

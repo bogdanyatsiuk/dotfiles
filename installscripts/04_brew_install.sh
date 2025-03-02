@@ -68,7 +68,6 @@ formulaes=(
     "pqiv:pqiv"
     "Web" # Web
     "ddgr:ddgr"
-    "googler:googler"
     "w3m:w3m"
     "wget:wget"
     "Different Tools" # Different Tools

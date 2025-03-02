@@ -157,14 +157,17 @@ sketchybar --add item front_app_icon center \
 # Additional position (e.g. center) are available, see:
 # https://felixkratz.github.io/SketchyBar/config/items#adding-items-to-sketchybar
 
+
 sketchybar --add item clock right                        \
            --set clock   update_freq=10                  \
-                         script="$PLUGIN_DIR/clock.sh"   \
-                                                         \
-           --add item battery right                      \
+                         script="$PLUGIN_DIR/clock.sh"
+
+if [[ $(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1) ]]; then
+sketchybar --add item battery right                      \
            --set battery script="$PLUGIN_DIR/battery.sh" \
                          update_freq=10                  \
            --subscribe battery system_woke
+fi
 
 sketchybar --add event input_change 'AppleSelectedInputSourcesChangedNotification' \
            --add item keyboard right                                               \
