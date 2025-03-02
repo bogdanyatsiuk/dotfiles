@@ -73,6 +73,7 @@ formulaes=(
     "Different Tools" # Different Tools
     "cheat:cheat"
     "cloc:cloc"
+    "cmake:cmake"
     "gcal:gCal"
     "gotop:gotop"
     "glow:Glow"
